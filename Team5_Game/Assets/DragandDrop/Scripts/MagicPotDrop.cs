@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,70 @@ using UnityEngine.EventSystems;
 
 public class MagicPotDrop : MonoBehaviour, IDropHandler
 {
-    public void OnDrop(PointerEventData eventData)
-    {
-        Debug.Log("OnDrop");
 
-        if(eventData.pointerDrag != null)
+    public static MagicPotDrop Instance; //다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
+
+    public bool FirstRecipeOn = false;
+    public bool SecondRecipeOn = false;
+    public bool ThirdRecipeOn = false;
+
+    private void Awake() 
+    {
+        if(MagicPotDrop.Instance == null)//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
+
         {
-           
-           //if(GetComponent<"item">) 
-            
-            //연기..뭔가 들어갔다는 효과 주기
-            //레시피대로 들어가면 
+            MagicPotDrop.Instance = this;
         }
     }
+
+
+
+
+    public void OnDrop(PointerEventData eventData)
+    {
+       // Debug.Log("OnDrop");
+
+        if (eventData.pointerDrag != null && FirstRecipeOn == true)
+        {
+
+            Debug.Log("firstDropped");
+
+        }
+        else if (eventData.pointerDrag != null && FirstRecipeOn == true)
+        {
+
+            Debug.Log("secondDropped");
+        }
+
+        else if (eventData.pointerDrag != null && FirstRecipeOn == true)
+        {
+
+            Debug.Log("thirdDropped");
+
+        }
+
+
+    }
+
+
+    public void FirstRecipe()
+    {
+        FirstRecipeOn = true;
+        Debug.Log("first");
+    }
+
+    public void SecondRecipe()
+    {
+        SecondRecipeOn = true;
+        Debug.Log("second");
+    }
+
+    public void ThirdRecipe()
+    {
+        ThirdRecipeOn = true;
+        Debug.Log("third");
+    }
+
+   
 }
+
