@@ -12,6 +12,8 @@ public class RandomRecipe : MonoBehaviour
 
     public static RandomRecipe Instance;//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
 
+ 
+
     private void Awake()
     {
         if (RandomRecipe.Instance == null)//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
@@ -22,10 +24,7 @@ public class RandomRecipe : MonoBehaviour
     }
 
 
-    void Update()
-    {
-       
-    }
+   
 
     public void PickRandomRecipe()
     {
@@ -41,15 +40,15 @@ public class RandomRecipe : MonoBehaviour
 
         if (randomRecipes == firstRecipe[0]) // 만약 뽑힌 레시피가 첫번째 레시피라면
         {
-            MagicPotDrop.Instance.FirstRecipe(); //다른 스크립트인 MagicPotDrop의 함수를 호출
+            Recipe.Instance.FirstRecipe(); //
         }
         else if(randomRecipes == secondRecipe[0]) // 만약 뽑힌 레시피가 두번째 레시피라면
         {
-            MagicPotDrop.Instance.SecondRecipe(); //다른 스크립트인 MagicPotDrop의 함수를 호출
+            Recipe.Instance.SecondRecipe(); //
         }
         else if (randomRecipes == thirdRecipe[0]) // 만약 뽑힌 레시피가 세번째 레시피라면
         {
-            MagicPotDrop.Instance.ThirdRecipe(); //다른 스크립트인 MagicPotDrop의 함수를 호출
+            Recipe.Instance.ThirdRecipe(); // 
         }
 
     }

@@ -3,52 +3,69 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDrop : MonoBehaviour
 {
+   //// public GameObject objectToDrag;
 
-    private RectTransform rectTransform;
+   // public GameObject objectDragToPos;
+   // public List<GameObject> Recipe1Objects = new List<GameObject>();
 
-    private CanvasGroup canvasGroup;
+   // public float Dropdistance;
 
-    Vector2 originPos;
+   // public bool isLocked;
 
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
+   // public int objNumber= 0;
 
-        originPos = transform.position;
-    }
+   // Vector2 objectInPos;
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        Debug.Log("OnBeginDrag");
-        canvasGroup.blocksRaycasts = false;
-    }
+   // //public List<Vector2> objectsInPos = new List<Vector2>();
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        Debug.Log("OnDrag");
-        rectTransform.anchoredPosition += eventData.delta;
-    }
+   // private void Start()
+   // {
+       
+   //         objectInPos = Recipe1Objects[i].transform.position;
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("OnEndDrag");
-        canvasGroup.blocksRaycasts = true;
+        
+       
+   // }
 
-        transform.position = originPos;
 
-    }
+   // public void DragObject()
+   // {
+   //     if(isLocked == false)
+   //     {
+   //         //Recipe1Objects[objNumber].transform.position = Input.mousePosition;
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerDown");
-    }
+   //         for (int i = 0; i < Recipe1Objects.Count; i++)
+   //         {
+   //             Recipe1Objects[i].transform.position = Input.mousePosition;
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
+   //         }
+
+   //     }
+   // }
+
+   // public void DropObject()
+   // {
+   //     float Distance = Vector3.Distance(Recipe1Objects[objNumber].transform.position, objectDragToPos.transform.position);
+
+   //     if(Distance < Dropdistance)
+   //     {
+   //         isLocked = true;
+
+   //         Recipe1Objects[objNumber].transform.position = objectDragToPos.transform.position;
+   //     }
+   //     else
+   //     {
+   //         Recipe1Objects[objNumber].transform.position = objectsInPos[objNumber];
+   //     }
+   // }
+
+
+
+
+
+
 }
