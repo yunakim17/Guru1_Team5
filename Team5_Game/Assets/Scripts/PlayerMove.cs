@@ -9,15 +9,17 @@ public class PlayerMove : MonoBehaviour
     {
         
     }
-    public float speed = 70;
+    public float moveSpeed = 20f;
+
     // Update is called once per frame
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Vector3 dir = new Vector3(h, v, 0);
+        Vector3 dir = new Vector3(h, 0, v);
+        dir = dir.normalized;
 
-        transform.position += dir * speed * Time.deltaTime;
+        transform.position += dir * moveSpeed * Time.deltaTime;
         //print("h:"+ h ",v:" +v);
         //transform.Translate(Vector3.right * 5 * Time.deltaTime);
 
