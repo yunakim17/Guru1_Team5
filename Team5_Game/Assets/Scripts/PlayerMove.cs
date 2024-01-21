@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     {
         
     }
-    public float speed = 20;
+    public float speed = 70;
     // Update is called once per frame
     void Update()
     {
