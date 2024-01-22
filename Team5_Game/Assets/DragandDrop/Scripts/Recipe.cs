@@ -1,90 +1,164 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Recipe : MonoBehaviour
+public class Recipe : MonoBehaviour, IPointerClickHandler
 {
-    public static Recipe Instance;//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
+    public static Recipe Instance;
 
     private void Awake()
     {
-        if (Recipe.Instance == null)//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
-
+        if (Recipe.Instance == null)
         {
             Recipe.Instance = this;
         }
     }
 
+     List<string> Recipe1Names = new List<string>() { "feather", "flower", "redMushroom" };
+     List<string> Recipe2Names = new List<string>() { "dragonScales", "flower2", "blueMushroom" };
+     List<string> Recipe3Names = new List<string>() { "lizardTail", "plantRoot", "greenMushroom" };
 
-    public List<GameObject> Recipe1Objects = new List<GameObject>(); //각 레시피 재료에 해당하는 게임 오브젝트들을 담기 위한 리스트
-    public List<GameObject> Recipe2Objects = new List<GameObject>();
-    public List<GameObject> Recipe3Objects = new List<GameObject>();
 
-    public bool FirstRecipeOn = false;
-    public bool SecondRecipeOn = false;
-    public bool ThirdRecipeOn = false;
+    bool FirstRecipeOn = false;
+    bool SecondRecipeOn = false;
+    bool ThirdRecipeOn = false;
 
 
     public GameObject objectToDrag;
-    public GameObject objectDragToPos;
+    public GameObject magicPotPos;
 
     public float Dropdistance;
 
-
     public void DragObject()
     {
-        objectToDrag.transform.position = Input.mousePosition;// 물체가 커서를 따라가게함
+        objectToDrag.transform.position = Input.mousePosition;//드래그 모션
+
     }
 
     public void DropObject()
     {
-        float Distance = Vector3.Distance(objectToDrag.transform.position, objectDragToPos.transform.position);
+        float distance = Vector3.Distance(objectToDrag.transform.position, magicPotPos.transform.position);
 
-        if (FirstRecipeOn == true && Recipe1Objects.Contains(gameObject))
-        {
-            objectToDrag.transform.position = objectDragToPos.transform.position;
-            Debug.Log("1번 레시피 재료 맞음");
+        Debug.Log("드랍한 오브젝트 : " + gameObject.name); //확인용
 
-        }
-        else if (SecondRecipeOn == true && Recipe2Objects.Contains(gameObject))
+        //if (FirstRecipeOn && Recipe1Names.Contains(gameObject.name))
+        //{
+        //    objectToDrag.transform.position = magicPotPos.transform.position;
+        //    Debug.Log("1번 레시피 재료 맞음");
+        //}
+        //else if (SecondRecipeOn && Recipe2Names.Contains(gameObject.name))
+        //{
+        //    objectToDrag.transform.position = magicPotPos.transform.position;
+        //    Debug.Log("2번 레시피 재료 맞음");
+        //}
+        //else if (ThirdRecipeOn && Recipe3Names.Contains(gameObject.name))
+        //{
+        //    objectToDrag.transform.position = magicPotPos.transform.position;
+        //    Debug.Log("3번 레시피 재료 맞음");
+        //}
+        //else
+        //{
+        //    Debug.Log("이 재료 아님!!");
+        //}
+
+
+
+        //if (distance < Dropdistance)
+        //{
+        //    if (FirstRecipeOn && Recipe1Names.Contains(gameObject.name))
+        //    {
+        //        objectToDrag.transform.position = magicPotPos.transform.position;
+        //        Debug.Log("1번 레시피 재료 맞음");
+        //    }
+        //    else if (SecondRecipeOn && Recipe2Names.Contains(gameObject.name))
+        //    {
+        //        objectToDrag.transform.position = magicPotPos.transform.position;
+        //        Debug.Log("2번 레시피 재료 맞음");
+        //    }
+        //    else if (ThirdRecipeOn && Recipe3Names.Contains(gameObject.name))
+        //    {
+        //        objectToDrag.transform.position = magicPotPos.transform.position;
+        //        Debug.Log("3번 레시피 재료 맞음");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("이 재료 아님!!");
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.Log("Object dropped too far away!");
+        //}
+
+
+
+
+        if (distance < Dropdistance)
         {
-            objectToDrag.transform.position = objectDragToPos.transform.position;
-            Debug.Log("2번 레시피 재료 맞음");
-        }
-       
-        else if (ThirdRecipeOn == true && Recipe3Objects.Contains(gameObject))
-        {
-            objectToDrag.transform.position = objectDragToPos.transform.position;
-            Debug.Log("3번 레시피 재료 맞음");
+            if (FirstRecipeOn)
+            {
+                CheckAndHandleRecipe(Recipe1Names, "1번");
+            }
+            else if (SecondRecipeOn)
+            {
+                CheckAndHandleRecipe(Recipe2Names, "2번");
+            }
+            else if (ThirdRecipeOn)
+            {
+                CheckAndHandleRecipe(Recipe3Names, "3번");
+            }
         }
         else
         {
-            Debug.Log("이 재료 아님!!");
-
+            Debug.Log("Object dropped too far away!");
         }
 
     }
 
-    //&& Distance < Dropdistance
-    //EventSystem.current.currentSelectedGameObject
+        void CheckAndHandleRecipe(List<string> recipeNames, string recipeNumber)
+        {
+            if (recipeNames.Contains(gameObject.name))
+            {
+                objectToDrag.transform.position = magicPotPos.transform.position;
+                Debug.Log($"{recipeNumber} 레시피 재료 맞음");
+            }
+            else
+            {
+                Debug.Log($"이 재료 아님!!");
+            }
+        }
 
-    public void FirstRecipe() //첫번째 레시피가 호출되면
-    {
-        FirstRecipeOn = true;
-        Debug.Log("first");
+
+
+
+
+        public void FirstRecipe()
+        {
+            FirstRecipeOn = true;
+            Debug.Log("first");
+        }
+
+        public void SecondRecipe()
+        {
+            SecondRecipeOn = true;
+            Debug.Log("second");
+        }
+
+        public void ThirdRecipe()
+        {
+            ThirdRecipeOn = true;
+            Debug.Log("third");
+        }
+
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            // Output the name of the clicked object
+            Debug.Log("Clicked object: " + gameObject.name); //확인용
+
+        }
     }
 
-    public void SecondRecipe() //첫번째 레시피가 호출되면
-    {
-        SecondRecipeOn = true;
-        Debug.Log("second");
-    }
-    
-    public void ThirdRecipe() //첫번째 레시피가 호출되면
-    {
-        ThirdRecipeOn = true;
-        Debug.Log("third");
-    }
-}

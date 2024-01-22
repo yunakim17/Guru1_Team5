@@ -28,7 +28,7 @@ public class RandomRecipe : MonoBehaviour
 
     public void PickRandomRecipe()
     {
-        string[] recipeArray = new string[] { "ºÒ»çÁ¶ÀÇ ±êÅĞ \r\n »¡°£ ¹ö¼¸ \r\n ²É", "¿ëÀÇ ºñ´Ã \r\n ÆÄ¶õ ¹ö¼¸ \r\n ²É", "¿ëÀÇ ºñ´Ã \r\n ÃÊ·Ï ¹ö¼¸ \r\n »Ñ¸®" };
+        string[] recipeArray = new string[] { "ºÒ»çÁ¶ÀÇ ±êÅĞ \r\n »¡°£ ¹ö¼¸ \r\n ²É", "¿ëÀÇ ºñ´Ã \r\n ÆÄ¶õ ¹ö¼¸ \r\n ²É2", "µµ¸¶¹ìÀÇ ²¿¸® \r\n ÃÊ·Ï ¹ö¼¸ \r\n »Ñ¸®" }; //¼öÁ¤
 
         string randomRecipes = recipeArray[UnityEngine.Random.Range(0, recipeArray.Length)]; //¹®ÀÚ¿­ randomRecipes¿¡ recipeArrayÁß ÇÏ³ª¸¦ ·£´ıÀ¸·Î »ÌÀ½
 
