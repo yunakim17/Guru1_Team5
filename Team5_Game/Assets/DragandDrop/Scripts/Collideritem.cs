@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class Collideritem : MonoBehaviour, IPointerDownHandler
 {
-    public static Collideritem Instance;//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
+    //public static Collideritem Instance;//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
 
-    private void Awake()
-    {
-        if (Collideritem.Instance == null)//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
+    //private void Awake()
+    //{
+    //    if (Collideritem.Instance == null)//다른 스크립트에서 이 스크립트의 함수를 호출할 때 필요
 
-        {
-            Collideritem.Instance = this;
-        }
-    }
+    //    {
+    //        Collideritem.Instance = this;
+    //    }
+    //}
 
 
     public Image itemImage;

@@ -5,27 +5,27 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Recipe : MonoBehaviour, IPointerClickHandler
+public class Recipe : MonoBehaviour //, IPointerClickHandler
 {
-    public static Recipe Instance;
+    //public static Recipe Instance;
 
-    private void Awake()
-    {
-        if (Recipe.Instance == null)
-        {
-            Recipe.Instance = this;
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (Recipe.Instance == null)
+    //    {
+    //        Recipe.Instance = this;
+    //    }
+    //}
 
      List<string> Recipe1Names = new List<string>() { "feather", "flower", "redMushroom" };
      List<string> Recipe2Names = new List<string>() { "dragonScales", "flower2", "blueMushroom" };
      List<string> Recipe3Names = new List<string>() { "lizardTail", "plantRoot", "greenMushroom" };
 
 
-    bool FirstRecipeOn = false;
-    bool SecondRecipeOn = false;
-    bool ThirdRecipeOn = false;
-
+    static bool FirstRecipeOn = false;
+    static bool SecondRecipeOn = false;
+    static bool ThirdRecipeOn = false;
+    
 
     public GameObject objectToDrag;
     public GameObject magicPotPos;
@@ -123,42 +123,40 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
             if (recipeNames.Contains(gameObject.name))
             {
                 objectToDrag.transform.position = magicPotPos.transform.position;
-                Debug.Log($"{recipeNumber} 레시피 재료 맞음");
+                Debug.Log($"{recipeNumber} 레시피 재료 맞음!!");
             }
             else
             {
-                Debug.Log($"이 재료 아님!!");
+                Debug.Log("이 재료 아님!!");
             }
         }
 
 
 
-
-
-        public void FirstRecipe()
+        public static void FirstRecipe(bool tf)
         {
-            FirstRecipeOn = true;
+            FirstRecipeOn = tf;
             Debug.Log("first");
         }
 
-        public void SecondRecipe()
+        public static void SecondRecipe(bool tf)
         {
-            SecondRecipeOn = true;
+            SecondRecipeOn = tf;
             Debug.Log("second");
         }
 
-        public void ThirdRecipe()
+        public static void ThirdRecipe(bool tf)
         {
-            ThirdRecipeOn = true;
+            ThirdRecipeOn = tf;
             Debug.Log("third");
         }
 
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            // Output the name of the clicked object
-            Debug.Log("Clicked object: " + gameObject.name); //확인용
+        //public void OnPointerClick(PointerEventData eventData)
+        //{
+        //    // Output the name of the clicked object
+        //    Debug.Log("Clicked object: " + gameObject.name); //확인용
 
-        }
+        //}
     }
 
