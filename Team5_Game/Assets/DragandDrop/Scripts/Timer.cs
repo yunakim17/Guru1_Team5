@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     }
 
 
-    public int totalTime = 5; // 총 시간
+    public int totalTime = 4; // 총 시간
     private int currentTime;   // 현재 시간
 
     public Text countdownText; //카운트다운하는 텍스트

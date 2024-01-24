@@ -37,7 +37,7 @@ public class HintButton : MonoBehaviour
 
         if (hintCount ==0) //힌트를 다 썼을 때
         {
-            Invoke("HintButtonDisappear", 5f);//5초 후에 힌트버튼과 레시피 사라지게하는 함수 호출
+            Invoke("HintButtonDisappear", 4f);//5초 후에 힌트버튼과 레시피 사라지게하는 함수 호출
         }
 
 

@@ -13,7 +13,7 @@ public class RecipeButton : MonoBehaviour
 
         Timer.Instance.TimerStart();
 
-        Invoke("RecipeButtonDisappear", 5f);//5초 후에 레시피버튼과 레시피 사라지게하는 함수 호출
+        Invoke("RecipeButtonDisappear", 4f);//5초 후에 레시피버튼과 레시피 사라지게하는 함수 호출
         
 
     }

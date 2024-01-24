@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 46107575}
   - component: {fileID: 46107577}
   - component: {fileID: 46107576}
+  - component: {fileID: 46107578}
   m_Layer: 0
   m_Name: HintRecipe
   m_TagString: Untagged
@@ -150,15 +151,15 @@ RectTransform:
   m_GameObject: {fileID: 46107574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -433, y: 126}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46107576
 MonoBehaviour:
@@ -202,6 +203,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46107574}
   m_CullTransparentMesh: 1
+--- !u!114 &46107578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46107574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2a4cfb76ac6884b8c577feefc18c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintRecipe: {fileID: 46107576}
 --- !u!1 &307076646
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: -31, y: -232}
   objectToDrag: {fileID: 307076646}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -353,6 +368,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 307076649}
+--- !u!1 &389384827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389384828}
+  - component: {fileID: 389384830}
+  - component: {fileID: 389384829}
+  - component: {fileID: 389384831}
+  m_Layer: 0
+  m_Name: HintCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &389384828
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389384827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 629780257}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 445, y: 227}
+  m_SizeDelta: {x: 230, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &389384829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389384827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &389384830
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389384827}
+  m_CullTransparentMesh: 1
+--- !u!114 &389384831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389384827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f283629032ee4444da653e68c60df2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HintCountText: {fileID: 389384829}
 --- !u!1 &410467336
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: -397, y: -232}
   objectToDrag: {fileID: 410467336}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -602,7 +711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &540847336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -620,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -446, y: 281}
+  m_AnchoredPosition: {x: -433, y: 274}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540847337
@@ -667,7 +776,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 629780258}
+      - m_Target: {fileID: 540847340}
         m_TargetAssemblyTypeName: RecipeButton, Assembly-CSharp
         m_MethodName: RecipeBtnPressed
         m_Mode: 1
@@ -762,6 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: 382, y: -232}
   objectToDrag: {fileID: 554980058}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -892,7 +1002,6 @@ GameObject:
   - component: {fileID: 629780256}
   - component: {fileID: 629780255}
   - component: {fileID: 629780254}
-  - component: {fileID: 629780258}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -990,6 +1099,7 @@ RectTransform:
   - {fileID: 1598327068}
   - {fileID: 1093482599}
   - {fileID: 46107575}
+  - {fileID: 389384828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -997,18 +1107,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &629780258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629780253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa6de37a7102c8049b3cabe6b800dd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &825470880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &825470881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,6 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: -152, y: -232}
   objectToDrag: {fileID: 863447287}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -1265,6 +1364,7 @@ GameObject:
   - component: {fileID: 1093482602}
   - component: {fileID: 1093482601}
   - component: {fileID: 1093482600}
+  - component: {fileID: 1093482603}
   m_Layer: 0
   m_Name: HintButton
   m_TagString: Untagged
@@ -1289,7 +1389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433, y: 275}
+  m_AnchoredPosition: {x: -433, y: 274}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093482600
@@ -1335,7 +1435,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1093482601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1093482603}
+        m_TargetAssemblyTypeName: HintButton, Assembly-CSharp
+        m_MethodName: HintBtnPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1093482601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,6 +1486,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093482598}
   m_CullTransparentMesh: 1
+--- !u!114 &1093482603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093482598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47f084dc29bddd4ebec3aa42f40d763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188428538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,6 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: -505, y: -232}
   objectToDrag: {fileID: 1354487939}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -1725,6 +1850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: 104, y: -232}
   objectToDrag: {fileID: 1362634926}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -1895,6 +2021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: 502, y: -232}
   objectToDrag: {fileID: 1486691970}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -2046,6 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: 254, y: -232}
   objectToDrag: {fileID: 1579397813}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300
@@ -2195,7 +2323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8973cb2ce66c97245a0ab690ad873c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 7
+  totalTime: 5
   countdownText: {fileID: 1598327070}
 --- !u!114 &1598327070
 MonoBehaviour:
@@ -2513,6 +2641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OriginPos: {x: -275, y: -232}
   objectToDrag: {fileID: 1946981624}
   magicPotPos: {fileID: 1188428538}
   Dropdistance: 300

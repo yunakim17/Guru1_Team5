@@ -31,6 +31,8 @@ public class Recipe : MonoBehaviour //, IPointerClickHandler
     static bool FirstRecipeOn = false;
     static bool SecondRecipeOn = false;
     static bool ThirdRecipeOn = false;
+
+    public Vector2 OriginPos;//유니티에서 원래위치 xy값 복붙해서 붙여넣기해야함
     
 
     public GameObject objectToDrag;
@@ -73,6 +75,7 @@ public class Recipe : MonoBehaviour //, IPointerClickHandler
         else
         {
             Debug.Log("너무 멀리 드랍했어!!");
+            objectToDrag.transform.position = OriginPos; //아이템이 원래 있던 자리로 돌아감
         }
 
     }
@@ -110,8 +113,9 @@ public class Recipe : MonoBehaviour //, IPointerClickHandler
             else //레시피에 없는 재료를 넣었을 때
             {
                 Debug.Log("이 재료 아님!!");
-               //펑하면서 뭔가 잘못됐다는 효과.. 점수 없이 다음 미니게임으로 넘어감
-            }
+                objectToDrag.SetActive(false);
+            //펑하면서 뭔가 잘못됐다는 효과.. 점수 없이 다음 미니게임으로 넘어감
+        }
         }
 
 

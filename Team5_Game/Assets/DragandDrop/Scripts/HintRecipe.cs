@@ -31,7 +31,7 @@ public class HintRecipe : MonoBehaviour
     {
         gameObject.SetActive(true);
         hintRecipe.text = hint;
-        Invoke("HintRecipeDisappear", 5f);
+        Invoke("HintRecipeDisappear", 4f);
     }
 
     void Start()
