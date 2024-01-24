@@ -9,12 +9,20 @@ public class PlayerMove : MonoBehaviour
     {
         
     }
-    public float moveSpeed = 20f;
+    public float moveSpeed = 11f;
+
 
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
+       
+            // 게임 상태가 ‘게임 중’ 상태일 때만 조작할 수 있게 한다.
+         // if (GameManager.gm.gState != GameManager.GameState.Run)
+         // {
+          //    return;
+         // }
+
+            float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(h, v, 0);
         //Vector3 dir = new Vector3(h, 0, v);
