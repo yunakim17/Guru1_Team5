@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     }
 
 
-    public int totalTime = 7; // 총 시간
+    public int totalTime = 5; // 총 시간
     private int currentTime;   // 현재 시간
 
     public Text countdownText; //카운트다운하는 텍스트
@@ -31,10 +31,14 @@ public class Timer : MonoBehaviour
 
     public void TimerStart()
     {
+
+
         gameObject.SetActive(true);
         currentTime = totalTime;
         UpdateUI();
         InvokeRepeating("UpdateCountdown", 1f, 1f); // 1초마다 UpdateCountdown 함수를 호출
+
+
     }
 
     void UpdateCountdown()
@@ -46,18 +50,21 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            // 시간 종료 처리
+            CancelInvoke("UpdateCountdown");// 시간 종료 처리
             gameObject.SetActive(false);
 
-            
+
         }
     }
 
     void UpdateUI()
     {
-        
+
         countdownText.text = currentTime.ToString();
     }
+
+
+
 
 
 }

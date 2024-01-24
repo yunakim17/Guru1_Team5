@@ -42,15 +42,18 @@ public class RandomRecipe : MonoBehaviour
 
         if (randomRecipes == firstRecipe[0]) // 만약 뽑힌 레시피가 첫번째 레시피라면
         {
-            Recipe.FirstRecipe(true); //
+            Recipe.FirstRecipe(true);
+            HintRecipe.Instance.SaveHint(0); //힌트버튼을 눌럿을 때 텍스트창에도 1번 레시피가 뜨게해야함
         }
         else if(randomRecipes == secondRecipe[0]) // 만약 뽑힌 레시피가 두번째 레시피라면
         {
-            Recipe.SecondRecipe(true); //
+            Recipe.SecondRecipe(true);
+            HintRecipe.Instance.SaveHint(1);
         }
         else if (randomRecipes == thirdRecipe[0]) // 만약 뽑힌 레시피가 세번째 레시피라면
         {
-            Recipe.ThirdRecipe(true); // 
+            Recipe.ThirdRecipe(true);
+            HintRecipe.Instance.SaveHint(2);
         }
 
     }

@@ -13,7 +13,7 @@ public class RecipeButton : MonoBehaviour
 
         Timer.Instance.TimerStart();
 
-        Invoke("RecipeButtonDisappear", 7f);//7초 후에 레시피 사라지게하는 함수 호출
+        Invoke("RecipeButtonDisappear", 5f);//5초 후에 레시피버튼과 레시피 사라지게하는 함수 호출
         
 
     }
@@ -26,7 +26,9 @@ public class RecipeButton : MonoBehaviour
         GameObject.Find("button").SetActive(false);
         GameObject.Find("Recipes").SetActive(false); //버튼과 레시피가 게임창에서 사라짐
 
-        //레시피 버튼이 사라진 자리에 힌트버튼 게임창에 나타나게 해야함~ setActive사용
+        HintButton.Instance.gameObject.SetActive(true);
+        LeftHint.Instance.gameObject.SetActive(true);//레시피 버튼이 사라진 자리에 힌트버튼 게임창에 나타나게 해야함~ setActive사용
+
 
     }
 
