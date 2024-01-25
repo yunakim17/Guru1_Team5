@@ -50,7 +50,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            CancelInvoke("UpdateCountdown");// 시간 종료 처리
+            CancelInvoke("UpdateCountdown");
             gameObject.SetActive(false);
 
 

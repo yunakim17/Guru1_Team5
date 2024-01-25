@@ -249,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: -31, y: -232}
+  OriginPos: {x: 541, y: 90}
   objectToDrag: {fileID: 307076646}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &307076648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,9 +350,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 541, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307076654
@@ -494,10 +494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: -397, y: -232}
+  OriginPos: {x: 175, y: 90}
   objectToDrag: {fileID: 410467336}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &410467338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,9 +595,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 175, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410467344
@@ -838,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6de37a7102c8049b3cabe6b800dd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SeeRecipeBtn: {fileID: 540847337}
 --- !u!1 &554980058
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,10 +872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: 382, y: -232}
+  OriginPos: {x: 954, y: 90}
   objectToDrag: {fileID: 554980058}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &554980060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,9 +973,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 382, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 954, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554980066
@@ -1233,10 +1234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: -152, y: -232}
+  OriginPos: {x: 420, y: 90}
   objectToDrag: {fileID: 863447287}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &863447289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,9 +1335,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 420, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863447295
@@ -1417,7 +1418,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0.46666667}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1498,6 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47f084dc29bddd4ebec3aa42f40d763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HintBtn: {fileID: 1093482600}
 --- !u!1 &1188428538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,9 +1702,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -505, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354487941
@@ -1813,10 +1815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: -505, y: -232}
+  OriginPos: {x: 67, y: 90}
   objectToDrag: {fileID: 1354487939}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!1 &1362634926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,10 +1852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: 104, y: -232}
+  OriginPos: {x: 676, y: 90}
   objectToDrag: {fileID: 1362634926}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &1362634928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1951,9 +1953,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 676, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362634934
@@ -2004,9 +2006,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 502, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1074, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486691972
@@ -2021,10 +2023,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: 502, y: -232}
+  OriginPos: {x: 1074, y: 90}
   objectToDrag: {fileID: 1486691970}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &1486691973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,9 +2158,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 254, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 826, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579397815
@@ -2173,10 +2175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: 254, y: -232}
+  OriginPos: {x: 826, y: 90}
   objectToDrag: {fileID: 1579397813}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &1579397816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,7 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8973cb2ce66c97245a0ab690ad873c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 5
+  totalTime: 4
   countdownText: {fileID: 1598327070}
 --- !u!114 &1598327070
 MonoBehaviour:
@@ -2641,10 +2643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc79e7fa954f0449ace2261df97366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginPos: {x: -275, y: -232}
+  OriginPos: {x: 297, y: 90}
   objectToDrag: {fileID: 1946981624}
   magicPotPos: {fileID: 1188428538}
-  Dropdistance: 300
+  Dropdistance: 240
 --- !u!114 &1946981626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,9 +2744,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 629780257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: -232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 297, y: 90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946981632

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: c35479bc66a52484da33b210b4fc6646
+  - enabled: 1
+    path: Assets/Scenes/InputID.unity
+    guid: 7d7fa7055b0df744892a4aa259c5426b
+  - enabled: 1
+    path: Assets/Scenes/PotionMaking.unity
+    guid: d8c011783144a204386de70d3b496ec4
   m_configObjects: {}

@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Recipe : MonoBehaviour //, IPointerClickHandler
+public class Recipe : MonoBehaviour 
 {
     //public static Recipe Instance;
 
@@ -152,11 +152,6 @@ public class Recipe : MonoBehaviour //, IPointerClickHandler
         }
 
 
-        //public void OnPointerClick(PointerEventData eventData)
-        //{
-        //    // Output the name of the clicked object
-        //    Debug.Log("Clicked object: " + gameObject.name); //È®ÀÎ¿ë
-
-        //}
+      
     }
 
