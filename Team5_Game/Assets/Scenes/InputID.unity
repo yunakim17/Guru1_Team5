@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 539022251}
   - component: {fileID: 539022250}
   - component: {fileID: 539022249}
+  - component: {fileID: 539022252}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -332,7 +333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 8, y: -75}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539022249
@@ -379,7 +380,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2037424339}
+      - m_Target: {fileID: 539022252}
         m_TargetAssemblyTypeName: StartMazeGame, Assembly-CSharp
         m_MethodName: GameScenesCtrl
         m_Mode: 1
@@ -429,6 +430,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539022246}
   m_CullTransparentMesh: 1
+--- !u!114 &539022252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539022246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8448866f3816e49a85390deb9b74fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &740364057
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 8, y: -75}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812508029
@@ -1164,7 +1177,6 @@ GameObject:
   - component: {fileID: 2037424338}
   - component: {fileID: 2037424337}
   - component: {fileID: 2037424336}
-  - component: {fileID: 2037424339}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1258,18 +1270,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2037424339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037424334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8448866f3816e49a85390deb9b74fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2077761766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter
+  m_Text: Start
 --- !u!222 &2077761769
 CanvasRenderer:
   m_ObjectHideFlags: 0
