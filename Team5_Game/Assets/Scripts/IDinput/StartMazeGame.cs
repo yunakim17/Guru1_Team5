@@ -20,10 +20,6 @@ public class StartMazeGame : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void StartBtnAppear()
-    {
-        gameObject.SetActive(true);
-    }
 
     public void GameScenesCtrl()
     {

@@ -80,7 +80,7 @@ public class Recipe : MonoBehaviour
 
     }
 
-        void CheckAndHandleRecipe(List<string> recipeNames, List<string> recipeAdded, int recipeNumber)
+        void CheckAndHandleRecipe(List<string> recipeNames, List<string> recipeAdded, int recipeNumber)//레시피대로 만들었는지 검사
         {
             if (recipeNames.Contains(gameObject.name))
             {
@@ -100,7 +100,7 @@ public class Recipe : MonoBehaviour
                 //완성된 물약 ui 호출
 
                 }
-                else if(Enumerable.SequenceEqual(recipeNames, recipeAdded) == false && AreListsEqual(recipeNames, recipeAdded) == true)//순서는 틀리지만 재료를 알맞게 넣었을때
+                else if(Enumerable.SequenceEqual(recipeNames, recipeAdded) == false && AreListsEqual(recipeNames, recipeAdded) == true)//순서는 틀리지만 재료는 알맞게 모두 넣었을때
                 {
                 Debug.Log("순서는 틀리지만 " + recipeNumber +"번 물약 제조 성공!");
 

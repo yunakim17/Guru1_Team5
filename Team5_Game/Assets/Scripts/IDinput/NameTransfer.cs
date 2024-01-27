@@ -11,6 +11,8 @@ public class NameTransfer : MonoBehaviour
 
     public GameObject textDisplay;
 
+    public GameObject startBtn;
+
 
     public void StoreName()
     {
@@ -20,6 +22,8 @@ public class NameTransfer : MonoBehaviour
         GameObject.Find("InputField").SetActive(false);
         GameObject.Find("submitBtn").SetActive(false);
 
-        StartMazeGame.Instance.StartBtnAppear();
+        startBtn.SetActive(true);
+
+       
     }
 }

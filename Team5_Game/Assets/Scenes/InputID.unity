@@ -778,6 +778,7 @@ MonoBehaviour:
   theName: 
   inputField: {fileID: 1122857240}
   textDisplay: {fileID: 740364057}
+  startBtn: {fileID: 539022246}
 --- !u!4 &1485504100
 Transform:
   m_ObjectHideFlags: 0
