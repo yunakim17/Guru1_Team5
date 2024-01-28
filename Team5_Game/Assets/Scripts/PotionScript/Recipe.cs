@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -91,21 +92,49 @@ public class Recipe : MonoBehaviour
 
                 recipeAdded.Add(objectToDrag.name);
 
-                
 
-                if(Enumerable.SequenceEqual(recipeNames, recipeAdded))//순서대로 잘만들었을때
+
+            if (Enumerable.SequenceEqual(recipeNames, recipeAdded))//순서대로 잘만들었을때
+            {
+                Debug.Log(recipeNumber + "번 물약 완벽 제조!!");
+
+                if (recipeNumber == 1)
                 {
-                Debug.Log(recipeNumber+ "번 물약 완벽 제조!!");
-
-                //완성된 물약 ui 호출
-
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출
                 }
-                else if(Enumerable.SequenceEqual(recipeNames, recipeAdded) == false && AreListsEqual(recipeNames, recipeAdded) == true)//순서는 틀리지만 재료는 알맞게 모두 넣었을때
+                else if (recipeNumber == 2)
                 {
-                Debug.Log("순서는 틀리지만 " + recipeNumber +"번 물약 제조 성공!");
-
-                //완성된 물약 ui 호출
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.BluePotionAppear();
                 }
+                else if (recipeNumber == 3)
+                {
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.GreenPotionAppear();
+                }
+
+            }
+            else if (Enumerable.SequenceEqual(recipeNames, recipeAdded) == false && AreListsEqual(recipeNames, recipeAdded) == true)//순서는 틀리지만 재료는 알맞게 모두 넣었을때
+            {
+                Debug.Log("순서는 틀리지만 " + recipeNumber + "번 물약 제조 성공!");
+
+                if (recipeNumber == 1)
+                {
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출
+                }
+                else if (recipeNumber == 2)
+                {
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.BluePotionAppear();
+                }
+                else if (recipeNumber == 3)
+                {
+                    Invoke("CallClearPanelAppear", 3f);
+                    ClearPanel.Instance.GreenPotionAppear();
+                } 
+            }
 
 
 
@@ -114,14 +143,22 @@ public class Recipe : MonoBehaviour
             {
                 Debug.Log("이 재료 아님!!");
                 objectToDrag.SetActive(false);
+                Invoke("CallFailPanelAppear", 3f);
             //펑하면서 뭔가 잘못됐다는 효과.. 점수 없이 다음 미니게임으로 넘어감
         }
         }
 
 
 
-   
+   public void CallClearPanelAppear() //성공 패널 호출
+    {
+        ClearPanel.Instance.ClearPanelAppear();
+    }
     
+    public void CallFailPanelAppear()//실패 패널 호출
+    {
+        FailPanel.Instance.FailPanelAppear();
+    }
 
      public bool AreListsEqual(List<string> list1, List<string> list2)
     {
