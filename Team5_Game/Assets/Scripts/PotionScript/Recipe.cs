@@ -21,7 +21,7 @@ public class Recipe : MonoBehaviour
     //}
 
      List<string> Recipe1Names = new List<string>() { "phoenixFeather", "blueFlower", "redMushroom", "lizardTail", "plantRoot" };
-     List<string> Recipe2Names = new List<string>() { "dragonScales", "YellowFlower", "blueMushroom", "plantRoot", "phoenixFeather" };
+     List<string> Recipe2Names = new List<string>() { "dragonScales", "yellowFlower", "blueMushroom", "plantRoot", "phoenixFeather" };
      List<string> Recipe3Names = new List<string>() { "lizardTail", "plantRoot", "greenMushroom", "phoenixFeather", "blueFlower" };
 
 
@@ -98,6 +98,10 @@ public class Recipe : MonoBehaviour
             {
                 Debug.Log(recipeNumber + "번 물약 완벽 제조!!");
 
+                ScoreManager.AddScore(20);//순서도 맞으면 20점 추가
+
+
+
                 if (recipeNumber == 1)
                 {
                     Invoke("CallClearPanelAppear", 3f);
@@ -118,6 +122,8 @@ public class Recipe : MonoBehaviour
             else if (Enumerable.SequenceEqual(recipeNames, recipeAdded) == false && AreListsEqual(recipeNames, recipeAdded) == true)//순서는 틀리지만 재료는 알맞게 모두 넣었을때
             {
                 Debug.Log("순서는 틀리지만 " + recipeNumber + "번 물약 제조 성공!");
+
+                ScoreManager.AddScore(10);//순서 틀리면 점수는 10점 추가
 
                 if (recipeNumber == 1)
                 {
@@ -144,7 +150,7 @@ public class Recipe : MonoBehaviour
                 Debug.Log("이 재료 아님!!");
                 objectToDrag.SetActive(false);
                 Invoke("CallFailPanelAppear", 3f);
-            //펑하면서 뭔가 잘못됐다는 효과.. 점수 없이 다음 미니게임으로 넘어감
+            //점수 없이 다음 미니게임으로 넘어감
         }
         }
 
