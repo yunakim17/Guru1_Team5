@@ -20,9 +20,9 @@ public class Recipe : MonoBehaviour
     //    }
     //}
 
-     List<string> Recipe1Names = new List<string>() { "phoenixFeather", "flower", "redMushroom", "lizardTail", "plantRoot" };
-     List<string> Recipe2Names = new List<string>() { "dragonScales", "flower2", "blueMushroom", "plantRoot", "phoenixFeather" };
-     List<string> Recipe3Names = new List<string>() { "lizardTail", "plantRoot", "greenMushroom", "phoenixFeather", "flower" };
+     List<string> Recipe1Names = new List<string>() { "phoenixFeather", "blueFlower", "redMushroom", "lizardTail", "plantRoot" };
+     List<string> Recipe2Names = new List<string>() { "dragonScales", "YellowFlower", "blueMushroom", "plantRoot", "phoenixFeather" };
+     List<string> Recipe3Names = new List<string>() { "lizardTail", "plantRoot", "greenMushroom", "phoenixFeather", "blueFlower" };
 
 
      static List<string> Recipe1Added = new List<string>();

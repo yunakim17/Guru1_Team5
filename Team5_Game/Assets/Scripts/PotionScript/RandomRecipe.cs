@@ -30,7 +30,7 @@ public class RandomRecipe : MonoBehaviour
 
     public void PickRandomRecipe()
     {
-        string[] recipeArray = new string[] { " 1. ºÒ»çÁ¶ÀÇ ±êÅĞ \r\n 2. ²É \r\n 3. »¡°£ ¹ö¼¸  \r\n 4. µµ¸¶¹ìÀÇ ²¿¸®  \r\n 5. »Ñ¸®", " 1. ¿ëÀÇ ºñ´Ã \r\n 2. ºĞÈ«²É \r\n 3. ÆÄ¶õ ¹ö¼¸  \r\n 4. »Ñ¸®  \r\n 5. ºÒ»çÁ¶ÀÇ ±êÅĞ", " 1. µµ¸¶¹ìÀÇ ²¿¸® \r\n 2. »Ñ¸® \r\n 3. ÃÊ·Ï ¹ö¼¸ \r\n 4. ºÒ»çÁ¶ÀÇ ±êÅĞ  \r\n 5. ²É" }; //¼öÁ¤
+        string[] recipeArray = new string[] { " 1. ºÒ»çÁ¶ÀÇ ±êÅĞ \r\n 2. Çª¸¥ ²É \r\n 3. »¡°£ ¹ö¼¸  \r\n 4. µµ¸¶¹ìÀÇ ²¿¸®  \r\n 5. »Ñ¸®", " 1. ¿ëÀÇ ºñ´Ã \r\n 2. ³ë¶õ ²É \r\n 3. ÆÄ¶õ ¹ö¼¸  \r\n 4. »Ñ¸®  \r\n 5. ºÒ»çÁ¶ÀÇ ±êÅĞ", " 1. µµ¸¶¹ìÀÇ ²¿¸® \r\n 2. »Ñ¸® \r\n 3. ÃÊ·Ï ¹ö¼¸ \r\n 4. ºÒ»çÁ¶ÀÇ ±êÅĞ  \r\n 5. Çª¸¥ ²É" }; //¼öÁ¤
 
         string randomRecipes = recipeArray[UnityEngine.Random.Range(0, recipeArray.Length)]; //¹®ÀÚ¿­ randomRecipes¿¡ recipeArrayÁß ÇÏ³ª¸¦ ·£´ıÀ¸·Î »ÌÀ½
 
