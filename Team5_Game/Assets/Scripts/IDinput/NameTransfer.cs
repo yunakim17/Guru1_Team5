@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NameTransfer : MonoBehaviour
 {
-    public string theName;
+    public static string theName = "swu";
 
     public GameObject inputField;
 

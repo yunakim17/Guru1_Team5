@@ -10,11 +10,14 @@ public class ScoreUI : MonoBehaviour
     private void Update()
     {
         // 점수 UI 업데이트
-        scoreText.text = "현재 학점 : " + ScoreManager.score.ToString();
+        scoreText.text = " x " + ScoreManager.score.ToString();
     }
 
     private void Start()
     {
-        scoreText.text = "현재 학점 : " + ScoreManager.score.ToString();
+        scoreText.text = " xs " + ScoreManager.score.ToString();
     }
+
+    //실험
+    
 }

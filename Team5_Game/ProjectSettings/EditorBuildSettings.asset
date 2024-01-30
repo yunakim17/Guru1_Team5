@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: c35479bc66a52484da33b210b4fc6646
   - enabled: 1
-    path: Assets/Scenes/Rule1.unity
-    guid: 7aae6db823b34ea4cb88f8ad27c51608
-  - enabled: 1
     path: Assets/Scenes/InputID.unity
-    guid: 7d7fa7055b0df744892a4aa259c5426b
+    guid: 7e1bdfbd0bfd7184a9813630e997c903
   - enabled: 1
     path: Assets/Scenes/PotionMaking.unity
     guid: d8c011783144a204386de70d3b496ec4
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 45988b60ecbf1844caf5651bebcce507
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

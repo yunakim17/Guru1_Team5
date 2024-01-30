@@ -33,13 +33,20 @@ public class Recipe : MonoBehaviour
     static bool SecondRecipeOn = false;
     static bool ThirdRecipeOn = false;
 
-    public Vector2 OriginPos;//유니티에서 원래위치 xy값 복붙해서 붙여넣기해야함
-    
+    private Vector2 OriginPos;//유니티에서 원래위치 xy값 복붙해서 붙여넣기해야함
+    private RectTransform rectTransform;
+
 
     public GameObject objectToDrag;
     public GameObject magicPotPos;
 
     public float Dropdistance;
+
+    private void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        OriginPos = rectTransform.position;
+    }
 
     public void DragObject()
     {
@@ -76,7 +83,7 @@ public class Recipe : MonoBehaviour
         else
         {
             Debug.Log("너무 멀리 드랍했어!!");
-            objectToDrag.transform.position = OriginPos; //아이템이 원래 있던 자리로 돌아감
+            objectToDrag.transform.position = OriginPos; //아이템이 원래 있던 자리로 돌아감 ///////////////////////////
         }
 
     }
@@ -98,7 +105,7 @@ public class Recipe : MonoBehaviour
             {
                 Debug.Log(recipeNumber + "번 물약 완벽 제조!!");
 
-                ScoreManager.AddScore(20);//순서도 맞으면 20점 추가
+                ScoreManager.AddScore(2);//순서도 맞으면 확인증 2개 추가
 
 
 
@@ -123,7 +130,7 @@ public class Recipe : MonoBehaviour
             {
                 Debug.Log("순서는 틀리지만 " + recipeNumber + "번 물약 제조 성공!");
 
-                ScoreManager.AddScore(10);//순서 틀리면 점수는 10점 추가
+                ScoreManager.AddScore(1);//순서 틀리면 확인증 1개 추가
 
                 if (recipeNumber == 1)
                 {
