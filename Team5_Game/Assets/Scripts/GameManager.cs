@@ -73,10 +73,7 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.Find("Player").GetComponent<PlayerMove>();
 
-        if (timer != null)
-        {
-            timer.Being(60); // Replace yourDurationValue with the desired duration.
-        }
+        
     }
     
     // Update is called once per frame
@@ -96,22 +93,26 @@ public class GameManager : MonoBehaviour
         {
          
 
-            if (GameObject.FindWithTag("Item") == null)
+            if (GameObject.FindWithTag("Item") == null && timer != null)
             {
                 Debug.Log("æ∆¿Ã≈€ »πµÊ º∫∞¯");
                 GameClear();
 
-                if(timer == null)
-                {
-                    Debug.Log("Ω√∞£ ≥ª µµ¬¯ Ω«∆–");
-                    GameFailed();
-                }
+                
             }
-            else
+            else if (GameObject.FindWithTag("Item") != null && timer != null)
+            {
+                
+                Debug.Log("æ∆¿Ã≈€ »πµÊ Ω«∆–");
+                GameFailed();
+            }
+            else if(timer == null)
             {
                 Debug.Log("æ∆¿Ã≈€ »πµÊ Ω«∆–");
                 GameFailed();
             }
+
+
 
             gameLabel.SetActive(true);
 

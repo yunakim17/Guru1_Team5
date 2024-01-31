@@ -12,15 +12,13 @@ public class ItemPickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
+
+    public string itemName = "DefaultItem";
+
+    public string GetItemName()
     {
-        
+        return itemName;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

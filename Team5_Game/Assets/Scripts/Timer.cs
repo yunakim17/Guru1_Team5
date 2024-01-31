@@ -1,126 +1,90 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour, IPointerClickHandler
+public class Timer : MonoBehaviour
 {
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Pause = !Pause;
-    }
-
     [Header("Timer UI references : ")]
-    [SerializeField] private Image uiFill;
+    [SerializeField] private Image uiFillImage;
     [SerializeField] private Text uiText;
 
-    public int Duration;
+    public int Duration { get; private set; }
+
+    public string thisScene;
 
     private int remainingDuration;
 
-    private bool Pause;
+   // public GameManager gameManagerScript;
 
-    private GameManager GamemanagerScript;
-
-    private void Start()
+    private void Awake()
     {
+        ResetTimer();
+       // gameManagerScript = GameObject.Find("gameManagerScript").GetComponent<GameManager>();
 
-        Being(Duration);
     }
 
-    public void Being(int Second)
+    private void ResetTimer()
     {
-        remainingDuration = Second;
+        uiText.text = "00:00";
+        uiFillImage.fillAmount = 0f;
+
+        Duration = remainingDuration = 0;
+    }
+
+    public Timer SetDuration(int seconds)
+    {
+        Duration = remainingDuration = seconds;
+        return this;
+    }
+
+    public void Begin()
+    {
+        StopAllCoroutines();
         StartCoroutine(UpdateTimer());
     }
 
     private IEnumerator UpdateTimer()
     {
         yield return new WaitForSeconds(3f);
-        while (remainingDuration >= 0)
+        while (remainingDuration > 0)
         {
-            if (!Pause)
-            {
-                
-                uiText.text = $"{remainingDuration / 60:00} : {remainingDuration % 60:00}";
-                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, remainingDuration);
-                remainingDuration--;
-                yield return new WaitForSeconds(1f);
-            }
-            yield return null;
-
-            
+            UpdateUI(remainingDuration);
+            remainingDuration--;
+            yield return new WaitForSeconds(1f);
         }
-        OnEnd();
     }
 
-    private void OnEnd()
+    private void UpdateUI(int seconds)
     {
-        print("End");
+        uiText.text = string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
+        uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
     }
 
-    void OnPlayerCollision(Collider Scroll)
+    public void End()
     {
-        // 여기서 충돌 시간을 멈추는 로직을 추가
-       
-            Pause = true;
-      
-           
+        ResetTimer();
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
-        //private IEnumerator UpdateTimer()
-        //{
-        //    while (remainingDuration >= 0)
-        //    {
-        //        uiText.text = $"{remaingDuration / 60:00} : {remainingDuration % 60:00}";
-        //        uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, remainingDuration);
-        //        remainingDuration--;
-        //        yield return new WaitForSeconds(1f);
-        //    }
-        //}
 
+//void OnPlayerCollision(Collider Scroll)
+   // {
+        // 여기서 충돌 시간을 멈추는 로직을 추가
+ //       if (Scroll.tag == "Player")
+ //       {
+ //           AnotherPause();
+ //       }
+           
+ //   }
 
-        //private void ResetTimer()
-        //{
-        //    uiText.text = "00:00";
-        //    uiFillImage.fillAmount = 0f;
+ //   void AnotherPause()
+ //   {
+ //       Time.timeScale = 0;
+  //  }
 
-        //    Duration = remainingDuration = 0;
-        //}
-
-        //public Timer SetDuration(int seconds)
-        //{
-        //    Duration = remainingDuration = 0;
-        //    return this;
-        //}
-
-        //public void Begin()
-        //{
-        //    StopAllCoroutines();
-        //    StartCoroutine(UpdateTimer());
-        //}
-
-
-        //private void UpdateUI(int seconds)
-        //{
-        //    uiText.text = string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
-        //    uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
-        //}
-
-        //public void End()
-        //{
-        //    ResetTimer();
-        //}
-
-        //private void OnDestroy()
-        //{
-        //    StopAllCoroutines();
-        //}
-
-        //private void Awake()
-        //{
-        //    ResetTimer();
-        //}
-        // Start is called before the first frame update
-    //}

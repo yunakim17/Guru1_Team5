@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private GameManager GamemanagerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,11 @@ public class PlayerMove : MonoBehaviour
     {
        
             // 게임 상태가 ‘게임 중’ 상태일 때만 조작할 수 있게 한다.
-         // if (GameManager.gm.gState != GameManager.GameState.Run)
-         // {
-          //    return;
-         // }
+         if (GameManager.gm.gState != GameManager.GameState.Run)
+         {
+            return;
+         }
+
 
             float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
