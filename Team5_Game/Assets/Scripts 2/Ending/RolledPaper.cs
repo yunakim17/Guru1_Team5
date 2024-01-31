@@ -27,7 +27,7 @@ public class RolledPaper : MonoBehaviour
 
     void Start()
     {
-        clickIt.text = "Click it!";
+        clickIt.text = "Open it!!";
         graduationCertificate.SetActive(false);
 
         Name = NameTransfer.theName;
