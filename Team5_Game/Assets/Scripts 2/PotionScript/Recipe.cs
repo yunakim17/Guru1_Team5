@@ -135,7 +135,7 @@ public class Recipe : MonoBehaviour
                 if (recipeNumber == 1)
                 {
                     Invoke("CallClearPanelAppear", 3f);
-                    ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출
+                    ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출 //크리처 전투 씬 스크립트의 함수 호출(해당 물약 오브젝트만 보이게)
                 }
                 else if (recipeNumber == 2)
                 {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NameTransfer : MonoBehaviour
 {
-    public static string theName = "swu";
+    public static string theName = "swu";//디폴트값
 
     public GameObject inputField;
 
@@ -17,7 +17,7 @@ public class NameTransfer : MonoBehaviour
     public void StoreName()
     {
         theName = inputField.GetComponent<Text>().text;
-        textDisplay.GetComponent<Text>().text = "Welcome " + theName + " to the Game!";
+        textDisplay.GetComponent<Text>().text = "Welcome " + theName + "\r\nto the Magical World!";
 
         GameObject.Find("InputField").SetActive(false);
         GameObject.Find("submitBtn").SetActive(false);

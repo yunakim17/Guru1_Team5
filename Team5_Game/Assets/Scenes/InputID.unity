@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.33490568, g: 0.25563127, b: 0.18956926, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -577,7 +577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What is your name?
+  m_Text: Tell us your Wizard Name..
 --- !u!222 &740364059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -966,7 +966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c891ef1e9b0fd8d47a4c981880b599ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theName: 
   inputField: {fileID: 1122857240}
   textDisplay: {fileID: 740364057}
   startBtn: {fileID: 539022246}
