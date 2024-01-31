@@ -15,7 +15,7 @@ public class ScoreUI : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = " xs " + ScoreManager.score.ToString();
+        scoreText.text = " x " + ScoreManager.score.ToString();
     }
 
     //½ÇÇè
