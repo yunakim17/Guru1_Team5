@@ -19,10 +19,13 @@ public class DialogueManager : MonoBehaviour
     private bool isTypingEffect = false;
 
     public GameObject SceneChangeButton;
+    public GameObject ClickObj;
+    Text ClickText;
 
     private void Awake()
     {
-        SetUp();  
+        SetUp();
+        ClickObj = GameObject.Find("Click");
     }
 
     void Start()
@@ -30,6 +33,9 @@ public class DialogueManager : MonoBehaviour
         //GameObject SceneChangeButton = GameObject.Find("SceneChangeButton");
        // SceneChangeButton = GetComponent<GameObject>();
        SceneChangeButton.SetActive(false);
+        ClickText = ClickObj.GetComponent<Text>();
+        ClickObj.SetActive(false);
+
     }
 
     private void SetUp()
@@ -77,6 +83,7 @@ public class DialogueManager : MonoBehaviour
                         //SetActiveObjects(speakers[i], false);
                         speakers[i].spriteRenderer.gameObject.SetActive(false);
                     }
+                ClickObj.SetActive(true);
                 SceneChangeButton.SetActive(true);
                 return true;
                 }

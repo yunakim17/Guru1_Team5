@@ -16,12 +16,12 @@ public class Timer : MonoBehaviour
 
     private int remainingDuration;
 
-   // public GameManager gameManagerScript;
+   
 
     private void Awake()
     {
         ResetTimer();
-       // gameManagerScript = GameObject.Find("gameManagerScript").GetComponent<GameManager>();
+       GameManager Instance = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 
@@ -62,9 +62,18 @@ public class Timer : MonoBehaviour
         uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
     }
 
+    void OnTriggerEnter(Collider Scroll)
+    {
+
+        if (Scroll.tag == "Player")
+        {
+            End();
+        }
+    }
+
     public void End()
     {
-        ResetTimer();
+       ResetTimer();
     }
 
     private void OnDestroy()

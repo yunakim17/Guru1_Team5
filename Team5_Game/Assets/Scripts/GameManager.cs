@@ -128,10 +128,17 @@ public class GameManager : MonoBehaviour
         gState = GameState.StageClear;
         gameText.text = "STAGE CLEAR";
 
-        certificate.SetActive(true);
-
         nextSceneButton.SetActive(true);
+
+        StartCoroutine(CertificateMove());
+
         // 스테이지 클리어에 대한 추가 로직을 여기에 추가하세요.
+    }
+
+    IEnumerator CertificateMove()
+    {
+        yield return new WaitForSeconds(1.5f);
+        certificate.SetActive(true);
     }
 
     void GameFailed()
