@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class Timer2 : MonoBehaviour
 {
 
 
-    public static Timer Instance;
+    public static Timer2 Instance;
 
     private void Awake()
     {
-        if (Timer.Instance == null)
+        if (Timer2.Instance == null)
         {
-            Timer.Instance = this;
+            Timer2.Instance = this;
         }
     }
 

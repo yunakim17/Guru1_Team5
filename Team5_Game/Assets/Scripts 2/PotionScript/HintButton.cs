@@ -35,7 +35,7 @@ public class HintButton : MonoBehaviour
 
         LeftHint.Instance.HintCountText.text = "남은 힌트 : " + hintCount + "번";
 
-        Timer.Instance.TimerStart();//타이머 호출
+        Timer2.Instance.TimerStart();//타이머 호출
 
         Invoke("HintBtnFalse", 0f);//누르자마자 힌트버튼 상호작용 불가능하게 -> 힌트버튼을 계속헤서 누를 수 없게함
 

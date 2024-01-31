@@ -15,7 +15,7 @@ public class RecipeButton : MonoBehaviour
 
         RecipePanel.SetActive(true);
 
-        Timer.Instance.TimerStart();
+        Timer2.Instance.TimerStart();
 
 
         SeeRecipeBtn.interactable = false; //레시피버튼을 한번 누르면 다시 클릭할 수 없음
