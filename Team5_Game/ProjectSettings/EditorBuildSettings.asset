@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Npc.unity
+    guid: 7bf1a9a589030584ab1f831b9ba4f009
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: ee7597440c4e63b479fe1aeedcc6c103
+  - enabled: 1
+    path: Assets/Scenes/PotionRule.unity
+    guid: 1049e17972899a345a1a4c415636193a
   m_configObjects: {}
