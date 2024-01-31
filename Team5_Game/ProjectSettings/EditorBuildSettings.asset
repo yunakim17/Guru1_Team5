@@ -17,12 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 45988b60ecbf1844caf5651bebcce507
-    path: Assets/Scenes/Npc.unity
-    guid: 7bf1a9a589030584ab1f831b9ba4f009
   - enabled: 1
     path: Assets/Scenes/Maze.unity
     guid: ee7597440c4e63b479fe1aeedcc6c103
   - enabled: 1
     path: Assets/Scenes/PotionRule.unity
     guid: 1049e17972899a345a1a4c415636193a
+  - enabled: 1
+    path: Assets/Scenes/Npc.unity
+    guid: 7bf1a9a589030584ab1f831b9ba4f009
   m_configObjects: {}

@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     void GameClear()
     {
         gState = GameState.StageClear;
-        gameText.text = "STAGE CLEAR";
+        gameText.text = "STAGE CLEAR!";
 
         nextSceneButton.SetActive(true);
 
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
     void GameFailed()
     {
         gState = GameState.Failed;
-        gameText.text = "FAILED";
+        gameText.text = "FAILED...";
 
         nextSceneButton.SetActive(true);
         // 실패에 대한 추가 로직을 여기에 추가하세요.
