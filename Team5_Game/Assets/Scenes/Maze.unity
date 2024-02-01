@@ -6874,8 +6874,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBC29\uD5A5\uD0A4(W,A,S,D)\uB85C \n\uD50C\uB808\uC774\uC5B4 \uC774\uB3D9 "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6f05d62176b3c894eba531c8ad2adcff, type: 2}
-  m_sharedMaterial: {fileID: -5994454206196298197, guid: 6f05d62176b3c894eba531c8ad2adcff, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
+  m_sharedMaterial: {fileID: -6393292013465437037, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

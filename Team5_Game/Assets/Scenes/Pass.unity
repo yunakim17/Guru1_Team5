@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   - speakerIndex: 1
     name: Professor
     dialogue: "\uC624..! \uBCF4\uC544\uD558\uB2C8 \uC790\uB124\uB294 \uBAA8\uB4E0
-      \uC2DC\uD5D8\uC744 \uC798 \uD1B5\uACFC\uD55C \uAC83 \uAC19\uAD70"
+      \uC2DC\uD5D8\uC744 \uC798 \uD1B5\uACFC\uD55C \uAC83 \uAC19\uAD70 "
   - speakerIndex: 1
     name: Professor
     dialogue: "3\uAC1C\uC758 \uD655\uC778\uC99D\uC744 \uBAA8\uB450 \uC5BB\uB294 \uAC83\uC774
@@ -1340,8 +1340,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
-  m_sharedMaterial: {fileID: -8467259966256081943, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9b7271d6c493e943a8153d1e558689b, type: 2}
+  m_sharedMaterial: {fileID: 6293660130051573557, guid: f9b7271d6c493e943a8153d1e558689b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2375,8 +2375,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
-  m_sharedMaterial: {fileID: -8467259966256081943, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9b7271d6c493e943a8153d1e558689b, type: 2}
+  m_sharedMaterial: {fileID: 6293660130051573557, guid: f9b7271d6c493e943a8153d1e558689b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
