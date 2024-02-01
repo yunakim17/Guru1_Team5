@@ -21,6 +21,8 @@ public class PlayerAttack : MonoBehaviour
     public float curtime3;
     public float cooltime4;
     public float curtime4;
+    public float cooltime5;
+    public float curtime5;
 
     public int MagicPower;
 
@@ -28,11 +30,13 @@ public class PlayerAttack : MonoBehaviour
     public MagicCooldown2 magicCooldown2;
     public MagicCooldown3 magicCooldown3;
     public MagicCooldown4 magicCooldown4;
+    public posionbutton magicCooldown5;
 
     public bool magicool_1 = false;
     public bool magicool_2 = false;
     public bool magicool_3 = false;
     public bool magicool_4 = false;
+    public bool magicool_5 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,20 +45,21 @@ public class PlayerAttack : MonoBehaviour
         magicCooldown2 = FindObjectOfType<MagicCooldown2>();
         magicCooldown3 = FindObjectOfType<MagicCooldown3>();
         magicCooldown4 = FindObjectOfType<MagicCooldown4>();
+        magicCooldown5 = FindObjectOfType<posionbutton>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        check1();
-        check2();
-        check3();
-        check4();
+        Check1();
+        Check2();
+        Check3();
+        Check4();
+        Check5();
 
-        
     }
 
-    void check1()
+    void Check1()
     {
         // 현재 시간이 쿨타임보다 작으면 쿨타임을 감소
         if (curtime1 > 0)
@@ -73,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void check2()
+    void Check2()
     {
         if (curtime2 > 0)
         {
@@ -89,7 +94,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void check3()
+    void Check3()
     {
         if (curtime3 > 0)
         {
@@ -105,7 +110,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void check4()
+    void Check4()
     {
         if (curtime4 > 0)
         {
@@ -121,126 +126,145 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void FireMagic1()
+    void Check5()
     {
-        //데미지 설정
-        MagicPower = 8;
-
-        // Magic1 프리팹을 복제하여 생성
-        GameObject magic1 = Instantiate(Magic1, pos.position, Quaternion.identity);
-
-        magicCooldown4.UseSpell3(); // MagicCooldown의 메서드 호출
-
-        // Rigidbody 컴포넌트가 없으면 추가
-        Rigidbody magic1Rigidbody = magic1.GetComponent<Rigidbody>();
-        if (magic1Rigidbody == null)
+        if (curtime5 > 0)
         {
-            magic1Rigidbody = magic1.AddComponent<Rigidbody>();
+            curtime5 -= Time.deltaTime;
         }
-
-        // Magic 스크립트를 가져와서 설정
-        Magic magicScript = magic1.GetComponent<Magic>();
-        Player playerScript = GetComponent<Player>();
-
-        if (magicScript != null)
+        if (curtime5 <= 0)
         {
-            // 플레이어의 움직임 방향을 고려하여 속도 설정
-            magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
-
-            // 게임 오브젝트 활성화
-            magic1.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Magic script not found on Magic1(Clone)!");
-            Destroy(magic1);
-        }
-
-    }
-    public void FireMagic2()
-    {
-        //데미지 설정
-
-        GameObject magic2 = Instantiate(Magic2, pos.position, Quaternion.identity);
-        magicCooldown3.UseSpell2();
-        Rigidbody magic1Rigidbody = magic2.GetComponent<Rigidbody>();
-        if (magic1Rigidbody == null)
-        {
-            magic1Rigidbody = magic2.AddComponent<Rigidbody>();
-        }
-
-        Magic magicScript = magic2.GetComponent<Magic>();
-        Player playerScript = GetComponent<Player>();
-
-        if (magicScript != null)
-        {
-            magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
-
-            magic2.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Magic script not found on Magic1(Clone)!");
-            Destroy(magic2);
-        }
-    }
-    public void FireMagic3()
-    {
-        //데미지 설정
-        MagicPower = 12;
-
-        GameObject magic3 = Instantiate(Magic3, pos.position, Quaternion.identity);
-        magicCooldown2.UseSpell1();
-        Rigidbody magic1Rigidbody = magic3.GetComponent<Rigidbody>();
-        if (magic1Rigidbody == null)
-        {
-            magic1Rigidbody = magic3.AddComponent<Rigidbody>();
-        }
-
-        Magic magicScript = magic3.GetComponent<Magic>();
-        Player playerScript = GetComponent<Player>();
-
-        if (magicScript != null)
-        {
-            magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
-
-            magic3.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Magic script not found on Magic1(Clone)!");
-            Destroy(magic3);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                FireMagic5();
+                curtime5 = cooltime5;
+            }
         }
     }
 
-    public void FireMagic4()
-    {
-        //데미지 설정
-        MagicPower = 20;
-
-        GameObject magic4 = Instantiate(Magic4, pos.position, Quaternion.identity);
-
-        magicCooldown.UseSpell(); // MagicCooldown의 메서드 호출
-
-        Rigidbody magic1Rigidbody = magic4.GetComponent<Rigidbody>();
-        if (magic1Rigidbody == null)
+    void FireMagic1()
         {
-            magic1Rigidbody = magic4.AddComponent<Rigidbody>();
+            //데미지 설정
+            MagicPower = 8;
+
+            // Magic1 프리팹을 복제하여 생성
+            GameObject magic1 = Instantiate(Magic1, pos.position, Quaternion.identity);
+
+            magicCooldown4.UseSpell3(); // MagicCooldown의 메서드 호출
+
+            // Rigidbody 컴포넌트가 없으면 추가
+            Rigidbody magic1Rigidbody = magic1.GetComponent<Rigidbody>();
+            if (magic1Rigidbody == null)
+            {
+                magic1Rigidbody = magic1.AddComponent<Rigidbody>();
+            }
+
+            // Magic 스크립트를 가져와서 설정
+            Magic magicScript = magic1.GetComponent<Magic>();
+            Player playerScript = GetComponent<Player>();
+
+            if (magicScript != null)
+            {
+                // 플레이어의 움직임 방향을 고려하여 속도 설정
+                magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
+
+                // 게임 오브젝트 활성화
+                magic1.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("Magic script not found on Magic1(Clone)!");
+                Destroy(magic1);
+            }
+
+        }
+        void FireMagic2()
+        {
+            //데미지 설정
+
+            GameObject magic2 = Instantiate(Magic2, pos.position, Quaternion.identity);
+            magicCooldown3.UseSpell2();
+            Rigidbody magic1Rigidbody = magic2.GetComponent<Rigidbody>();
+            if (magic1Rigidbody == null)
+            {
+                magic1Rigidbody = magic2.AddComponent<Rigidbody>();
+            }
+
+            Magic magicScript = magic2.GetComponent<Magic>();
+            Player playerScript = GetComponent<Player>();
+
+            if (magicScript != null)
+            {
+                magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
+
+                magic2.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("Magic script not found on Magic1(Clone)!");
+                Destroy(magic2);
+            }
+        }
+        void FireMagic3()
+        {
+            //데미지 설정
+            MagicPower = 12;
+
+            GameObject magic3 = Instantiate(Magic3, pos.position, Quaternion.identity);
+            magicCooldown2.UseSpell1();
+            Rigidbody magic1Rigidbody = magic3.GetComponent<Rigidbody>();
+            if (magic1Rigidbody == null)
+            {
+                magic1Rigidbody = magic3.AddComponent<Rigidbody>();
+            }
+
+            Magic magicScript = magic3.GetComponent<Magic>();
+            Player playerScript = GetComponent<Player>();
+
+            if (magicScript != null)
+            {
+                magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
+
+                magic3.SetActive(true);
+            }
         }
 
-        Magic magicScript = magic4.GetComponent<Magic>();
-        Player playerScript = GetComponent<Player>();
-
-        if (magicScript != null)
+        void FireMagic4()
         {
-            magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
+            //데미지 설정
+            MagicPower = 20;
 
-            magic4.SetActive(true);
+            GameObject magic4 = Instantiate(Magic4, pos.position, Quaternion.identity);
+
+            magicCooldown.UseSpell(); // MagicCooldown의 메서드 호출
+
+            Rigidbody magic1Rigidbody = magic4.GetComponent<Rigidbody>();
+            if (magic1Rigidbody == null)
+            {
+                magic1Rigidbody = magic4.AddComponent<Rigidbody>();
+            }
+
+            Magic magicScript = magic4.GetComponent<Magic>();
+            Player playerScript = GetComponent<Player>();
+
+            if (magicScript != null)
+            {
+                magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
+
+                magic4.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("Magic script not found on Magic1(Clone)!");
+                Destroy(magic4);
+            }
         }
-        else
+
+        void FireMagic5()
         {
-            Debug.LogError("Magic script not found on Magic1(Clone)!");
-            Destroy(magic4);
+            magicCooldown5.UseSpell5();
+
+            Player playerScript = GetComponent<Player>();
+            playerScript.hp += 25;
         }
     }
-}
