@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject nextSceneButton;
 
+
+
     public GameObject certificate;
 
     PlayerMove Player;
@@ -100,17 +102,18 @@ public class GameManager : MonoBehaviour
 
                 
             }
-            else if (GameObject.FindWithTag("Item") != null && timer != null)
+            else if (GameObject.FindWithTag("Item") != null && timer == null)
             {
                 
-                Debug.Log("아이템 획득 실패");
+                Debug.Log("시간 초과");
                 GameFailed();
             }
-            else if(timer == null)
+
+            else if(GameObject.FindWithTag("Item") == null && timer == null)
             {
-                Debug.Log("아이템 획득 실패");
+               Debug.Log("시간 초과");
                 GameFailed();
-            }
+             }
 
 
 

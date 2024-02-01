@@ -62,14 +62,14 @@ public class Timer : MonoBehaviour
         uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
     }
 
-    void OnTriggerEnter(Collider Scroll)
-    {
+    //void OnTriggerEnter(Collider Scroll)
+   // {
 
-        if (Scroll.tag == "Player")
-        {
-            End();
-        }
-    }
+    //    if (Scroll.tag == "Player")
+     //   {
+    //        End();
+     //   }
+   // }
 
     public void End()
     {
