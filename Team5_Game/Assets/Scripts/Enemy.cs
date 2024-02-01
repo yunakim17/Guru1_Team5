@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
 
     public float findDistance = 15f;    //예시
 
-    //플레이어 트렌스폼 (왜 있는건지 모르겠음)
     Transform player;
 
     public float attackdistsnce = 1.5f;
@@ -55,6 +54,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player").transform;
 
         cc = GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
@@ -89,6 +89,8 @@ public class Enemy : MonoBehaviour
         }
 
         hpSlider.value = (float)hp / (float)maxHp;
+
+        transform.position = new Vector3(transform.position.x, -2.4f, transform.position.z);
     }
 
     void Idle()
@@ -138,7 +140,7 @@ public class Enemy : MonoBehaviour
     //    }
     //    else
     //    {
-    //        m_state = EnemyState.Attack1;   //질문: 공격방법이 다양한데 어떻게 해야할지
+    //        m_state = EnemyState.Attack1;   
     //        currentTime1 = attackdelay1;
     //    }
     //}
