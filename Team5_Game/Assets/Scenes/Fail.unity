@@ -1058,10 +1058,10 @@ MonoBehaviour:
   - speakerIndex: 1
     name: Professor
     dialogue: "\uD760..\uC790\uB124\uB294 3\uAC1C\uC758 \uD655\uC778\uC99D\uC744
-      \uBAA8\uB450 \uC5BB\uC9C0 \uBABB\uD55C \uAC83 \uAC19\uAD70"
+      \uBAA8\uB450 \uC5BB\uC9C0 \uBABB\uD55C \uAC83 \uAC19\uAD70."
   - speakerIndex: 0
     name: Player
-    dialogue: "\uB124.. "
+    dialogue: "\uB124..."
   - speakerIndex: 1
     name: Professor
     dialogue: "\uD558\uC9C0\uB9CC \uCCAB \uC2DC\uB3C4\uC5D0 \uBAA8\uB450 \uD1B5\uACFC\uD558\uB294
@@ -1071,7 +1071,7 @@ MonoBehaviour:
     name: Professor
     dialogue: "\uD760\uD760. \uADF8\uB7FC \uD559\uC0DD\uC740 \uB2E4\uC2DC \uC5F4\uC2EC\uD788
       \uACF5\uBD80\uD574\uC11C \uC2DC\uD5D8\uC744 \uB2E4\uC2DC \uCE58\uB974\uBA74
-      \uB41C\uB2E4\uB124"
+      \uB41C\uB2E4\uB124."
   - speakerIndex: 1
     name: Professor
     dialogue: "\uB2E4\uC74C\uC5D0 \uBCFC \uB550 \uC6C3\uB294 \uC5BC\uAD74\uB85C \uB9CC\uB098\uBA74
