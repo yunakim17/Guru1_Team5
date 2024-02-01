@@ -38,4 +38,11 @@ public class SceneChange : MonoBehaviour
         Debug.Log("Game Scene Go"); //fail씬 -> start씬
         ScoreManager.score = 0; //확인증 개수 0으로 초기화
     }
+
+    public void GameScenesCtrl6()
+    {
+        SceneManager.LoadScene("CreatureFight");
+        Debug.Log("Game Scene Go"); //크리처 룰 -> 크리처파이트
+      
+    }
 }
