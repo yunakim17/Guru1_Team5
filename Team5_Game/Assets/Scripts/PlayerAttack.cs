@@ -25,11 +25,22 @@ public class PlayerAttack : MonoBehaviour
     public int MagicPower;
 
     public MagicCooldown magicCooldown;
+    public MagicCooldown2 magicCooldown2;
+    public MagicCooldown3 magicCooldown3;
+    public MagicCooldown4 magicCooldown4;
+
+    public bool magicool_1 = false;
+    public bool magicool_2 = false;
+    public bool magicool_3 = false;
+    public bool magicool_4 = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        magicCooldown = FindObjectOfType<MagicCooldown>();
+        magicCooldown2 = FindObjectOfType<MagicCooldown2>();
+        magicCooldown3 = FindObjectOfType<MagicCooldown3>();
+        magicCooldown4 = FindObjectOfType<MagicCooldown4>();
     }
 
     // Update is called once per frame
@@ -118,6 +129,8 @@ public class PlayerAttack : MonoBehaviour
         // Magic1 프리팹을 복제하여 생성
         GameObject magic1 = Instantiate(Magic1, pos.position, Quaternion.identity);
 
+        magicCooldown4.UseSpell3(); // MagicCooldown의 메서드 호출
+
         // Rigidbody 컴포넌트가 없으면 추가
         Rigidbody magic1Rigidbody = magic1.GetComponent<Rigidbody>();
         if (magic1Rigidbody == null)
@@ -149,7 +162,7 @@ public class PlayerAttack : MonoBehaviour
         //데미지 설정
 
         GameObject magic2 = Instantiate(Magic2, pos.position, Quaternion.identity);
-
+        magicCooldown3.UseSpell2();
         Rigidbody magic1Rigidbody = magic2.GetComponent<Rigidbody>();
         if (magic1Rigidbody == null)
         {
@@ -177,7 +190,7 @@ public class PlayerAttack : MonoBehaviour
         MagicPower = 12;
 
         GameObject magic3 = Instantiate(Magic3, pos.position, Quaternion.identity);
-
+        magicCooldown2.UseSpell1();
         Rigidbody magic1Rigidbody = magic3.GetComponent<Rigidbody>();
         if (magic1Rigidbody == null)
         {
@@ -206,6 +219,8 @@ public class PlayerAttack : MonoBehaviour
         MagicPower = 20;
 
         GameObject magic4 = Instantiate(Magic4, pos.position, Quaternion.identity);
+
+        magicCooldown.UseSpell(); // MagicCooldown의 메서드 호출
 
         Rigidbody magic1Rigidbody = magic4.GetComponent<Rigidbody>();
         if (magic1Rigidbody == null)
