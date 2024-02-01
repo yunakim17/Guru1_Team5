@@ -112,17 +112,21 @@ public class Recipe : MonoBehaviour
                 if (recipeNumber == 1)
                 {
                     Invoke("CallClearPanelAppear", 3f);
-                    ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출
+                    ClearPanel.Instance.RedPotionAppear();
+                    connectPotion.RedPotionOn();//해당 물약 전투씬에서 호출
                 }
+
                 else if (recipeNumber == 2)
                 {
                     Invoke("CallClearPanelAppear", 3f);
                     ClearPanel.Instance.BluePotionAppear();
+                    connectPotion.BluePotionOn();//해당 물약 전투씬에서 호출
                 }
                 else if (recipeNumber == 3)
                 {
                     Invoke("CallClearPanelAppear", 3f);
                     ClearPanel.Instance.GreenPotionAppear();
+                    connectPotion.GreenPotionOn();//해당 물약 전투씬에서 호출
                 }
 
             }
@@ -136,16 +140,19 @@ public class Recipe : MonoBehaviour
                 {
                     Invoke("CallClearPanelAppear", 3f);
                     ClearPanel.Instance.RedPotionAppear();       //완성된 물약 ui 호출 //크리처 전투 씬 스크립트의 함수 호출(해당 물약 오브젝트만 보이게)
+                    connectPotion.RedPotionOn();//해당 물약 전투씬에서 호출
                 }
                 else if (recipeNumber == 2)
                 {
                     Invoke("CallClearPanelAppear", 3f);
                     ClearPanel.Instance.BluePotionAppear();
+                    connectPotion.BluePotionOn();//해당 물약 전투씬에서 호출
                 }
                 else if (recipeNumber == 3)
                 {
                     Invoke("CallClearPanelAppear", 3f);
                     ClearPanel.Instance.GreenPotionAppear();
+                    connectPotion.GreenPotionOn();//해당 물약 전투씬에서 호출
                 } 
             }
 
