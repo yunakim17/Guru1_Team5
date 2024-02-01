@@ -11,8 +11,8 @@ public class PlayerMove : MonoBehaviour
         
     }
     public float moveSpeed = 11f;
-
-
+    //Vector3 lookDirection;
+    
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +35,7 @@ public class PlayerMove : MonoBehaviour
         //transform.Translate(Vector3.right * 5 * Time.deltaTime);
 
         //Vector3 dir = Vector3.right * h + Vector3.up * v;
-       
+       // transform.rotation = Quaternion.LookRotation(lookDirection);
+   
     }
 }
