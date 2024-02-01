@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
         Ready,
         Run,
         StageClear,
-        Failed
+        Failed,
+        ReturnToPickUp
     }
 
     public GameState gState;
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
         gState = GameState.Ready;
 
         gameText = gameLabel.GetComponent<Text>();
+
+        timer = GameObject.Find("TimeBar").GetComponent<Timer>();
 
         nextSceneButton.SetActive(false);
 
@@ -100,26 +103,42 @@ public class GameManager : MonoBehaviour
                 Debug.Log("아이템 획득 성공");
                 GameClear();
 
-                
+                gameLabel.SetActive(true);
+
+                Destroy(this.gameObject);
             }
-            else if (GameObject.FindWithTag("Item") != null && timer == null)
+            else if (GameObject.FindWithTag("Item") != null && timer != null)
             {
                 
-                Debug.Log("시간 초과");
-                GameFailed();
+                Debug.Log("아이템을 모두 획득하세요");
+
+                StartCoroutine(ReturnTo());
+
+                if (GameObject.FindWithTag("Item") == null && timer != null)
+                {
+                    GameClear();
+                }
+                else if(timer == null)
+                {
+                    GameFailed();
+                }
             }
 
-            else if(GameObject.FindWithTag("Item") == null && timer == null)
+           else if(GameObject.FindWithTag("Item") == null && timer == null)
             {
                Debug.Log("시간 초과");
                 GameFailed();
-             }
+
+                gameLabel.SetActive(true);
+
+                Destroy(this.gameObject);
+           }
 
 
 
-            gameLabel.SetActive(true);
+           // gameLabel.SetActive(true);
 
-            Destroy(this.gameObject);
+           // Destroy(this.gameObject);
         }
 
         
@@ -134,16 +153,21 @@ public class GameManager : MonoBehaviour
         nextSceneButton.SetActive(true);
 
         ScoreManager.AddScore(1);
-        //StartCoroutine(CertificateMove());
+       
 
-        // 스테이지 클리어에 대한 추가 로직을 여기에 추가하세요.
+        // 스테이지 클리어에 대한 추가 로직.
     }
 
-    //IEnumerator CertificateMove()
-    //{
-      //  yield return new WaitForSeconds(1.5f);
-      //  certificate.SetActive(true);
-   // }
+  IEnumerator ReturnTo()
+    {
+        gState = GameState.ReturnToPickUp;
+        gameText.text = "Pick Up All Items";
+
+        gameLabel.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        gameLabel.SetActive(false);
+
+    }
 
     void GameFailed()
     {
@@ -151,7 +175,7 @@ public class GameManager : MonoBehaviour
         gameText.text = "FAILED...";
 
         nextSceneButton.SetActive(true);
-        // 실패에 대한 추가 로직을 여기에 추가하세요.
+        // 실패에 대한 추가 로직
     }
 
    

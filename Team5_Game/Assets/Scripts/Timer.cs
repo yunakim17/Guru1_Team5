@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 
     private int remainingDuration;
 
-   
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -48,12 +48,14 @@ public class Timer : MonoBehaviour
     private IEnumerator UpdateTimer()
     {
         yield return new WaitForSeconds(3f);
+
         while (remainingDuration > 0)
         {
             UpdateUI(remainingDuration);
             remainingDuration--;
             yield return new WaitForSeconds(1f);
         }
+        End();
     }
 
     private void UpdateUI(int seconds)
@@ -62,14 +64,14 @@ public class Timer : MonoBehaviour
         uiFillImage.fillAmount = Mathf.InverseLerp(0, Duration, seconds);
     }
 
-    //void OnTriggerEnter(Collider Scroll)
-   // {
+    void OnTriggerEnter(Collider Scroll)
+    {
 
-    //    if (Scroll.tag == "Player")
-     //   {
-    //        End();
-     //   }
-   // }
+        if (Scroll.tag == "Player")
+        {
+            End();
+        }
+    }
 
     public void End()
     {

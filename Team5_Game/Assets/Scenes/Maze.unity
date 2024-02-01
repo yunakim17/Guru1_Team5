@@ -4473,6 +4473,7 @@ MonoBehaviour:
   uiFillImage: {fileID: 1727050234}
   uiText: {fileID: 382187627}
   thisScene: 
+  gameManager: {fileID: 0}
 --- !u!1 &1089078999
 GameObject:
   m_ObjectHideFlags: 0
@@ -7201,7 +7202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1606119115123918346, guid: dc4f5ca0395e4c34b947004376940e66, type: 3}
       propertyPath: m_Name
-      value: Bar 1
+      value: TimeBar
       objectReference: {fileID: 0}
     - target: {fileID: 1606119115123918347, guid: dc4f5ca0395e4c34b947004376940e66, type: 3}
       propertyPath: m_Pivot.x
