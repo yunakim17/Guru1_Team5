@@ -17,11 +17,18 @@ public class MagicCooldown : MonoBehaviour
     private float cooldownTime = 10.0f;
     private float cooldownTimer = 0.0f;
 
+    private PlayerAttack playerAttack;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         textCooldown.gameObject.SetActive(false);
         imageCooldown.fillAmount = 0;
+
+        // PlayerAttack 인스턴스를 받아옴
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     // Update is called once per frame
@@ -43,11 +50,11 @@ public class MagicCooldown : MonoBehaviour
             textCooldown.gameObject.SetActive(false);
             imageCooldown.fillAmount = 0.0f;
 
-            
-
-            //자동
-            UseSpell();
-
+            if (playerAttack.magicool_1 == true)
+            {
+                UseSpell();
+                playerAttack.magicool_1 = false;
+            }
 
 
         }
