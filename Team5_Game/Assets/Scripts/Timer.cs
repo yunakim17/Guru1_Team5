@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     [Header("Timer UI references : ")]
     [SerializeField] private Image uiFillImage;
-    [SerializeField] private Text uiText;
+    [SerializeField] public Text uiText;
 
     public int Duration { get; private set; }
 
@@ -18,11 +18,13 @@ public class Timer : MonoBehaviour
 
     public GameManager gameManager;
 
+    public GameManager timerManager { get; private set; }
+
     private void Awake()
     {
         ResetTimer();
        GameManager Instance = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        timerManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void ResetTimer()

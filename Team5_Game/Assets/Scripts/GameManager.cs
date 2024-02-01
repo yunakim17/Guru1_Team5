@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         {
          
 
-            if (GameObject.FindWithTag("Item") == null && timer != null)
+            if (GameObject.FindWithTag("Item") == null && timer.uiText.text != "00:00")
             {
                 Debug.Log("아이템 획득 성공");
                 GameClear();
@@ -107,24 +107,24 @@ public class GameManager : MonoBehaviour
 
                 Destroy(this.gameObject);
             }
-            else if (GameObject.FindWithTag("Item") != null && timer != null)
+            else if (GameObject.FindWithTag("Item") != null && timer.uiText.text != "00:00")
             {
                 
                 Debug.Log("아이템을 모두 획득하세요");
 
                 StartCoroutine(ReturnTo());
 
-                if (GameObject.FindWithTag("Item") == null && timer != null)
+                if (GameObject.FindWithTag("Item") == null && timer.uiText.text != "00:00")
                 {
                     GameClear();
                 }
-                else if(timer == null)
+                else if(timer.uiText.text == "00:00")
                 {
                     GameFailed();
                 }
             }
 
-           else if(GameObject.FindWithTag("Item") == null && timer == null)
+           else if(GameObject.FindWithTag("Item") == null && timer.uiText.text == "00:00")
             {
                Debug.Log("시간 초과");
                 GameFailed();
