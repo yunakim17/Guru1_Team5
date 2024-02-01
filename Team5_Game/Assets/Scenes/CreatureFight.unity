@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &18496024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8024132858845195760, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &22704183
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +668,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8169089809735702268, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       insertIndex: 1
       addedObject: {fileID: 569103119}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6660297718668130643, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1070045594}
   m_SourcePrefab: {fileID: 100100000, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
 --- !u!224 &130309630 stripped
 RectTransform:
@@ -1000,6 +1014,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569103118}
   m_CullTransparentMesh: 1
+--- !u!114 &573169434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653689497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2501,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1070045590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6660297718668130643, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1070045594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070045590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5eda6cdcc8bb54cb5781a77f8b49bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown5: {fileID: 18496024}
+  textCooldown5: {fileID: 573169434}
+  isCooldown5: 1
+  cooldownTime5: 6
 --- !u!1 &1163204040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,15 +2621,19 @@ MonoBehaviour:
   curtime3: 0
   cooltime4: 10
   curtime4: 0
+  cooltime5: 0
+  curtime5: 0
   MagicPower: 10
   magicCooldown: {fileID: 0}
   magicCooldown2: {fileID: 0}
   magicCooldown3: {fileID: 0}
   magicCooldown4: {fileID: 0}
+  magicCooldown5: {fileID: 0}
   magicool_1: 0
   magicool_2: 0
   magicool_3: 0
   magicool_4: 0
+  magicool_5: 0
 --- !u!114 &1163204044
 MonoBehaviour:
   m_ObjectHideFlags: 0
