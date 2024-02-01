@@ -130,16 +130,17 @@ public class GameManager : MonoBehaviour
 
         nextSceneButton.SetActive(true);
 
-        StartCoroutine(CertificateMove());
+        ScoreManager.AddScore(1);
+        //StartCoroutine(CertificateMove());
 
         // 스테이지 클리어에 대한 추가 로직을 여기에 추가하세요.
     }
 
-    IEnumerator CertificateMove()
-    {
-        yield return new WaitForSeconds(1.5f);
-        certificate.SetActive(true);
-    }
+    //IEnumerator CertificateMove()
+    //{
+      //  yield return new WaitForSeconds(1.5f);
+      //  certificate.SetActive(true);
+   // }
 
     void GameFailed()
     {
