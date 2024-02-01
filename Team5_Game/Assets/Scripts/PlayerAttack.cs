@@ -21,6 +21,8 @@ public class PlayerAttack : MonoBehaviour
     public float curtime3;
     public float cooltime4;
     public float curtime4;
+    public float cooltime5;
+    public float curtime5;
 
     public int MagicPower;
 
@@ -28,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
     public MagicCooldown2 magicCooldown2;
     public MagicCooldown3 magicCooldown3;
     public MagicCooldown4 magicCooldown4;
+    public ButtonPosion magicCooldown5;
 
     public bool magicool_1 = false;
     public bool magicool_2 = false;
@@ -41,6 +44,8 @@ public class PlayerAttack : MonoBehaviour
         magicCooldown2 = FindObjectOfType<MagicCooldown2>();
         magicCooldown3 = FindObjectOfType<MagicCooldown3>();
         magicCooldown4 = FindObjectOfType<MagicCooldown4>();
+        magicCooldown5 = FindObjectOfType<ButtonPosion>();
+
     }
 
     // Update is called once per frame
@@ -50,8 +55,9 @@ public class PlayerAttack : MonoBehaviour
         check2();
         check3();
         check4();
+        check5();
 
-        
+
     }
 
     void check1()
@@ -117,6 +123,22 @@ public class PlayerAttack : MonoBehaviour
             {
                 FireMagic4();
                 curtime4 = cooltime4;
+            }
+        }
+    }
+
+    void check5()
+    {
+        if (curtime5 > 0)
+        {
+            curtime5 -= Time.deltaTime;
+        }
+        if (curtime5 <= 0)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                HpPosion();
+                curtime5 = cooltime5;
             }
         }
     }
@@ -242,5 +264,10 @@ public class PlayerAttack : MonoBehaviour
             Debug.LogError("Magic script not found on Magic1(Clone)!");
             Destroy(magic4);
         }
+    }
+
+    public void HpPosion()
+    {
+        magicCooldown5.UseSpell5(); 
     }
 }

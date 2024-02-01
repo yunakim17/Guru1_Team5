@@ -518,6 +518,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1009694423}
     m_Modifications:
+    - target: {fileID: 353216484049666881, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353216484049666881, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353216484049666881, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 830039014803692852, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       propertyPath: m_SizeDelta.x
       value: 105
@@ -540,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       propertyPath: m_text
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       propertyPath: m_fontSize
@@ -657,7 +669,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8169089809735702268, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       insertIndex: 1
       addedObject: {fileID: 569103119}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6660297718668130643, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1221591233}
   m_SourcePrefab: {fileID: 100100000, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
 --- !u!224 &130309630 stripped
 RectTransform:
@@ -1000,6 +1015,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569103118}
   m_CullTransparentMesh: 1
+--- !u!114 &628015788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8024132858845195760, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653689497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1274,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730990344}
   m_CullTransparentMesh: 1
+--- !u!114 &745136378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &761751922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,11 +2443,14 @@ MonoBehaviour:
   curtime3: 0
   cooltime4: 10
   curtime4: 0
+  cooltime5: 0
+  curtime5: 0
   MagicPower: 10
   magicCooldown: {fileID: 0}
   magicCooldown2: {fileID: 0}
   magicCooldown3: {fileID: 0}
   magicCooldown4: {fileID: 0}
+  magicCooldown5: {fileID: 0}
   magicool_1: 0
   magicool_2: 0
   magicool_3: 0
@@ -2807,6 +2847,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1221591229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6660297718668130643, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
+  m_PrefabInstance: {fileID: 130309629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1221591233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221591229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af2d3aac01fe0841930175abbb1ad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown5: {fileID: 628015788}
+  textCooldown5: {fileID: 745136378}
+  isCooldown5: 1
+  cooldownTime5: 6
 --- !u!1 &1298020169
 GameObject:
   m_ObjectHideFlags: 0
