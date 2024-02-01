@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CreatureRule.unity
     guid: e300931c27fb51b48a339ac3c2ba6148
   - enabled: 1
+    path: Assets/Scenes/Fail.unity
+    guid: c7fd41ebdbc9be54eb09313f26b5116d
+  - enabled: 1
+    path: Assets/Scenes/Pass.unity
+    guid: 9cf24cf2831ae7f458a4a6f6e002a04c
+  - enabled: 1
     path: Assets/Scenes/CreatureFight.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
