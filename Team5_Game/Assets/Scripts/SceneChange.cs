@@ -25,4 +25,16 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("PotionMaking");
         Debug.Log("Game Scene Go");
     }
+
+    public void GameScenesCtrl4()
+    {
+        SceneManager.LoadScene("Ending");
+        Debug.Log("Game Scene Go");
+    }
+
+    public void GameScenesCtrl5()
+    {
+        SceneManager.LoadScene("StartScene");
+        Debug.Log("Game Scene Go");
+    }
 }
