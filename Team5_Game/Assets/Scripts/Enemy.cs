@@ -238,6 +238,7 @@ public class Enemy : MonoBehaviour
         {
             m_state = EnemyState.Die;
             die();
+            ScoreManager.AddScore(1); // 에너미 죽으면 확인증 1개 추가
         }
     }
 
