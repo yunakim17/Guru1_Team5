@@ -186,6 +186,7 @@ public class PlayerAttack : MonoBehaviour
         void FireMagic2()
         {
             //데미지 설정
+            MagicPower = 10;
 
             GameObject magic2 = Instantiate(Magic2, pos.position, Quaternion.identity);
             magicCooldown3.UseSpell2();
