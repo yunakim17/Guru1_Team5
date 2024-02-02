@@ -1058,7 +1058,7 @@ MonoBehaviour:
   - speakerIndex: 1
     name: Professor
     dialogue: "\uC624..! \uBCF4\uC544\uD558\uB2C8 \uC790\uB124\uB294 \uBAA8\uB4E0
-      \uC2DC\uD5D8\uC744 \uC798 \uD1B5\uACFC\uD55C \uAC83 \uAC19\uAD70 "
+      \uC2DC\uD5D8\uC744 \uC798 \uD1B5\uACFC\uD55C \uAC83 \uAC19\uAD70."
   - speakerIndex: 1
     name: Professor
     dialogue: "3\uAC1C\uC758 \uD655\uC778\uC99D\uC744 \uBAA8\uB450 \uC5BB\uB294 \uAC83\uC774
@@ -1074,11 +1074,11 @@ MonoBehaviour:
       \uC790 \uC774 \uC878\uC5C5\uC7A5\uC744 \uBC1B\uAC8C\uB098! \uC815\uB9D0 \uCD95\uD558\uD55C\uB2E4\uB124!!"
   - speakerIndex: 0
     name: Player
-    dialogue: "\uAC10\uC0AC\uD569\uB2C8\uB2E4 \uAD50\uC218\uB2D8!"
+    dialogue: "\uAC10\uC0AC\uD569\uB2C8\uB2E4 \uAD50\uC218\uB2D8!!"
   - speakerIndex: 0
     name: Player
     dialogue: "\uC640!! \uB4DC\uB514\uC5B4 \uC878\uC5C5\uC774\uB2E4! \uB098\uB3C4
-      \uC774\uC81C \uB354 \uBA4B\uC9C4 \uB9C8\uBC95\uC0AC\uAC00 \uB420 \uC218 \uC788\uACA0\uC9C0?"
+      \uC774\uC81C \uB354 \uBA4B\uC9C4 \uB9C8\uBC95\uC0AC\uAC00 \uB420 \uC218 \uC788\uACA0\uC9C0??"
   isAutoStart: 1
   SceneChangeButton: {fileID: 2057225667}
   ClickObj: {fileID: 223489940}

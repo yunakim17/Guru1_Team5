@@ -136,9 +136,5 @@ public class Player : MonoBehaviour
         Debug.Log("Á×À½");
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-     
-    }
 
 }

@@ -55,6 +55,12 @@ public class connectPotion : MonoBehaviour
             redpotion.SetActive(false);
             bluepotion.SetActive(false);
         }
+        else
+        {
+            redpotion.SetActive(false);
+            bluepotion.SetActive(false);
+            greenpotion.SetActive(false);
+        }
     }
 
    
