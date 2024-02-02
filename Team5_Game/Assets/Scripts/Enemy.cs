@@ -107,6 +107,17 @@ public class Enemy : MonoBehaviour
             Vector3 dir = (new Vector3(player.position.x, 0, player.position.z) -
                            new Vector3(transform.position.x, 0, transform.position.z)).normalized;
 
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+
+            // DungeonSkeleton_demo의 회전도 수정
+            Transform dungeonSkeletonTransform = transform.Find("DungeonSkeleton_demo");
+            if (dungeonSkeletonTransform != null)
+            {
+                dungeonSkeletonTransform.rotation = Quaternion.Euler(0, angle, 0);
+            }
+
             cc.Move(dir * speed * Time.deltaTime);
             anim.SetBool("idleToWalk", true);
         }
