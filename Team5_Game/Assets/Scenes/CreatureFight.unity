@@ -3295,7 +3295,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "A,D: \uD50C\uB808\uC774\uC5B4 \uC774\uB3D9\n\uC88C\uD074\uB9AD, R, T,
-    Q: \uACF5\uACA9\nE: \uCCB4\uB825\uD68C\uBCF5"
+    Q: \uACF5\uACA9\nE: \uCCB4\uB825\uD68C\uBCF5 (\uBB3C\uC57D\uC774 \uC788\uC744
+    \uC2DC)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}
   m_sharedMaterial: {fileID: -6393292013465437037, guid: fdf929d68b56606428638fd4a490c4a7, type: 2}

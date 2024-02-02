@@ -147,7 +147,7 @@ public class PlayerAttack : MonoBehaviour
     void FireMagic1()
         {
             //데미지 설정
-            MagicPower = 8;
+            MagicPower = 15;
 
             // Magic1 프리팹을 복제하여 생성
             GameObject magic1 = Instantiate(Magic1, pos.position, Quaternion.identity);
@@ -186,7 +186,7 @@ public class PlayerAttack : MonoBehaviour
         void FireMagic2()
         {
             //데미지 설정
-            MagicPower = 12;
+            MagicPower = 20;
             GameObject magic2 = Instantiate(Magic2, pos.position, Quaternion.identity);
             magicCooldown3.UseSpell2();
             Rigidbody magic1Rigidbody = magic2.GetComponent<Rigidbody>();
@@ -213,7 +213,7 @@ public class PlayerAttack : MonoBehaviour
         void FireMagic3()
         {
             //데미지 설정
-            MagicPower = 12;
+            MagicPower = 25;
 
             GameObject magic3 = Instantiate(Magic3, pos.position, Quaternion.identity);
             magicCooldown2.UseSpell1();
@@ -238,7 +238,7 @@ public class PlayerAttack : MonoBehaviour
         void FireMagic4()
         {
             //데미지 설정
-            MagicPower = 20;
+            MagicPower = 28;
 
             GameObject magic4 = Instantiate(Magic4, pos.position, Quaternion.identity);
 
