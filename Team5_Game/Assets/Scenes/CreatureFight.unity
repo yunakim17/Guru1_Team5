@@ -1993,7 +1993,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1009694423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841287647
@@ -2147,7 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ee4d3bfde555a4a84b2511a8c1dbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 400
+  hp: 350
   hpSlider: {fileID: 761751924}
   findDistance: 15
   attackdistsnce: 1.5
@@ -2463,7 +2464,7 @@ RectTransform:
   - {fileID: 1693156779}
   - {fileID: 2093324095}
   - {fileID: 1229114119}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 823558871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4750,6 +4751,5 @@ SceneRoots:
   - {fileID: 1163204046}
   - {fileID: 841287651}
   - {fileID: 239791764}
-  - {fileID: 1009694423}
   - {fileID: 823558871}
   - {fileID: 104803874}

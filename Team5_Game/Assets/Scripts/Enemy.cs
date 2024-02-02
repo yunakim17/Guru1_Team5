@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int hp = 400;
+    public int hp = 350;
 
-    int maxHp = 400;
+    int maxHp = 350;
 
     public Slider hpSlider;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     float currentTime1 = 0;
     float attackdelay1 = 5f;
 
-    public int attackpower1 = 7;
+    public int attackpower1 = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +115,7 @@ public class Enemy : MonoBehaviour
             if (currentTime1 <= 0)  // 수정된 부분
             {
                 m_state = EnemyState.Attack1;
+                anim.SetBool("WalkToAttack", true);
                 currentTime1 = attackdelay1;
             }
         }
@@ -145,6 +146,7 @@ public class Enemy : MonoBehaviour
         else
         {
             m_state = EnemyState.Move;
+            anim.SetBool("attackToWalk", true);
             currentTime1 = 0;
         }
     }
