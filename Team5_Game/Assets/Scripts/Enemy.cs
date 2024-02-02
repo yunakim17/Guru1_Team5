@@ -28,8 +28,6 @@ public class Enemy : MonoBehaviour
         Idle,
         Move,
         Attack1,
-        Attack2,
-        Attack3,
         Damaged,
         Die
     }
@@ -38,14 +36,8 @@ public class Enemy : MonoBehaviour
 
     float currentTime1 = 0;
     float attackdelay1 = 5f;
-    float currentTime2 = 0;
-    float attackdelay2 = 10f;
-    float currentTime3 = 0;
-    float attackdelay3 = 15f;
 
-    public int attackpower1 = 5;
-    public int attackpower2 = 6;
-    public int attackpower3 = 9;
+    public int attackpower1 = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -74,13 +66,6 @@ public class Enemy : MonoBehaviour
 
             case EnemyState.Attack1:
                 attack1();
-                break;
-
-            case EnemyState.Attack2:
-                attack2();
-                break;
-            case EnemyState.Attack3:
-                attack3();
                 break;
             case EnemyState.Damaged:
                 Damaged();
@@ -132,30 +117,12 @@ public class Enemy : MonoBehaviour
                 m_state = EnemyState.Attack1;
                 currentTime1 = attackdelay1;
             }
-            else if (currentTime2 <= 0)  // 수정된 부분
-            {
-                m_state = EnemyState.Attack2;
-                currentTime2 = attackdelay2;
-            }
-            else if (currentTime3 <= 0)  // 수정된 부분
-            {
-                m_state = EnemyState.Attack3;
-                currentTime3 = attackdelay3;
-            }
         }
 
         // 각 공격 상태에서 currentTime 감소
         if (m_state == EnemyState.Attack1)
         {
             currentTime1 -= Time.deltaTime;
-        }
-        else if (m_state == EnemyState.Attack2)
-        {
-            currentTime2 -= Time.deltaTime;
-        }
-        else if (m_state == EnemyState.Attack3)
-        {
-            currentTime3 -= Time.deltaTime;
         }
     }
 
@@ -179,47 +146,6 @@ public class Enemy : MonoBehaviour
         {
             m_state = EnemyState.Move;
             currentTime1 = 0;
-        }
-    }
-
-    void attack2()
-    {
-        if (Vector3.Distance(transform.position, player.position) < attackdistsnce)
-        {
-            currentTime2 += Time.deltaTime;
-            if (currentTime2 > attackdelay2)
-            {
-                player.GetComponent<Player>().DamageAction(attackpower2);
-                
-                Debug.Log("에너미의 공격2");
-                anim.SetBool("attack", true);
-                currentTime2 = 0;
-            }
-        }
-        else
-        {
-            m_state = EnemyState.Move;
-            currentTime2 = 0;
-        }
-    }
-
-    void attack3()
-    {
-        if (Vector3.Distance(transform.position, player.position) < attackdistsnce)
-        {
-            currentTime3 += Time.deltaTime;
-            if (currentTime3 > attackdelay3)
-            {
-                player.GetComponent<Player>().DamageAction(attackpower3);
-                anim.SetBool("attack", true);
-                Debug.Log("에너미의 공격3");
-                currentTime3 = 0;
-            }
-        }
-        else
-        {
-            m_state = EnemyState.Move;
-            currentTime3 = 0;
         }
     }
 
