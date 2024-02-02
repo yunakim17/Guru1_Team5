@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     public Slider hpSlider;
 
-    public float findDistance = 15f;    //¿¹½Ã
+    public float findDistance = 15f;
 
     Transform player;
 
