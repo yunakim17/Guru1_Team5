@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         Check1();
         Check2();
         Check3();
@@ -72,7 +75,6 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 FireMagic1();
-                // 발사 후에 쿨타임을 다시 설정
                 curtime1 = cooltime1;
             }
         }
@@ -88,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                //FireMagic2(); 방어로 수정
+                FireMagic2();
                 curtime2 = cooltime2;
             }
         }
@@ -163,14 +165,17 @@ public class PlayerAttack : MonoBehaviour
             Magic magicScript = magic1.GetComponent<Magic>();
             Player playerScript = GetComponent<Player>();
 
-            if (magicScript != null)
+            
+
+        if (magicScript != null)
             {
                 // 플레이어의 움직임 방향을 고려하여 속도 설정
                 magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
 
                 // 게임 오브젝트 활성화
                 magic1.SetActive(true);
-            }
+                playerScript.animator.SetTrigger("Attack");
+        }
             else
             {
                 Debug.LogError("Magic script not found on Magic1(Clone)!");
@@ -198,10 +203,10 @@ public class PlayerAttack : MonoBehaviour
                 magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
 
                 magic2.SetActive(true);
-            }
+                playerScript.animator.SetTrigger("Attack");
+        }
             else
             {
-                Debug.LogError("Magic script not found on Magic1(Clone)!");
                 Destroy(magic2);
             }
         }
@@ -226,7 +231,8 @@ public class PlayerAttack : MonoBehaviour
                 magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
 
                 magic3.SetActive(true);
-            }
+                playerScript.animator.SetTrigger("Attack");
+        }
         }
 
         void FireMagic4()
@@ -252,7 +258,8 @@ public class PlayerAttack : MonoBehaviour
                 magic1Rigidbody.velocity = new Vector3(playerScript.direction, 0f, 0f) * speed;
 
                 magic4.SetActive(true);
-            }
+                playerScript.animator.SetTrigger("Attack");
+        }
             else
             {
                 Debug.LogError("Magic script not found on Magic1(Clone)!");

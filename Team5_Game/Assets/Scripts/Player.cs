@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriter;
 
     private float horizontal;
-    //private Animator animator;
+    public Animator animator;
 
     public int hp = 100;
 
@@ -20,17 +20,9 @@ public class Player : MonoBehaviour
 
     public Slider hpSlider;
 
-
     Vector3 movement;
 
     public float direction = 1;
-
-    public float jumpPower = 30f;
-
-    bool isJumping = false;
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +30,18 @@ public class Player : MonoBehaviour
         myRigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
 
-        //animator = GetComponent<Animator>();
+        // "Wizard Variant" 오브젝트의 Animator 컴포넌트 가져오기
+        Animator wizardAnimator = transform.Find("Wizard Variant")?.GetComponent<Animator>();
+
+        if (wizardAnimator != null)
+        {
+            animator = wizardAnimator;
+        }
+        else
+        {
+            // "Wizard Variant" 오브젝트의 Animator가 없을 경우 에러 로그 출력
+            Debug.LogError("Animator component is missing on the Wizard Variant object under the Player!");
+        }
     }
 
     // Update is called once per frame
@@ -48,22 +51,23 @@ public class Player : MonoBehaviour
 
         hpSlider.value = (float)hp / (float)maxHp;
 
-        // 스페이스 키 입력 처리
-        if (Input.GetKeyDown(KeyCode.Space) && transform.position.y == -2.88f)
+        // 현재 오브젝트의 위치
+        Vector3 currentPosition = transform.position;
+
+        // 높이가 0 이하인 경우 0으로 설정
+        if (currentPosition.y < -2.88f)
         {
-            isJumping = true;
+            currentPosition.y = -2.88f;
+            transform.position = currentPosition;
         }
 
         Run();
-        Jump();
     }
-
 
     private void Run()
     {
         Vector3 moveVelocity = Vector3.zero;
-        //anim.SetBool("isRun", false);
-
+        animator.SetBool("isRun", false);
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
@@ -71,43 +75,20 @@ public class Player : MonoBehaviour
             moveVelocity = Vector3.left;
 
             transform.localScale = new Vector3(direction, 1, 1);
-            //if (!anim.GetBool("isJump"))
-            //    anim.SetBool("isRun", true);
-
+            animator.SetBool("isRun", true);
         }
+
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             direction = 1f;
             moveVelocity = Vector3.right;
 
             transform.localScale = new Vector3(direction, 1, 1);
-            //if (!anim.GetBool("isJump"))
-            //    anim.SetBool("isRun", true);
-
+            animator.SetBool("isRun", true);
         }
+
         transform.position += moveVelocity * speed * Time.deltaTime;
     }
-
-    void Jump()
-    {
-        if (transform.position.y < -2.88f)
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.y = -2.88f;
-            transform.position = newPosition;
-        }
-        if (isJumping == true)
-        {
-            this.myRigid.AddForce(transform.up * this.jumpPower);
-            isJumping = false;
-        }
-
-    }
-
-
-
-
-
 
     public void DamageAction(int damage)
     {
@@ -116,25 +97,29 @@ public class Player : MonoBehaviour
         if (hp > 0)
         {
             StartCoroutine(DamageProcess());
+            animator.SetBool("hurt", true);
         }
-        // 그렇지 않다면 죽음 상태로 전환한다.
         else
         {
             Die();
         }
     }
+
     IEnumerator DamageProcess()
     {
-        yield return new WaitForSeconds(0.5f);  //피격 모션 시간 만큼 기다림
+        yield return new WaitForSeconds(0.5f);
     }
 
     void Die()
     {
-        // 진행 중인 피격 코루틴을 중지한다.
         StopAllCoroutines();
-        Destroy(gameObject);
-        Debug.Log("죽음");
+        animator.SetTrigger("Die");
+        StartCoroutine(DestroyAfterAnimation());
     }
 
-
+    IEnumerator DestroyAfterAnimation()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
+    }
 }

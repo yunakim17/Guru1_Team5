@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
 
     CharacterController cc;
 
+    public Animator anim;
+
     enum EnemyState
     {
         Idle,
@@ -35,15 +37,15 @@ public class Enemy : MonoBehaviour
     EnemyState m_state;
 
     float currentTime1 = 0;
-    float attackdelay1 = 2f;
+    float attackdelay1 = 5f;
     float currentTime2 = 0;
-    float attackdelay2 = 2f;
+    float attackdelay2 = 10f;
     float currentTime3 = 0;
-    float attackdelay3 = 2f;
+    float attackdelay3 = 15f;
 
     public int attackpower1 = 5;
-    public int attackpower2 = 8;
-    public int attackpower3 = 12;
+    public int attackpower2 = 6;
+    public int attackpower3 = 9;
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +92,14 @@ public class Enemy : MonoBehaviour
 
         hpSlider.value = (float)hp / (float)maxHp;
 
-        transform.position = new Vector3(transform.position.x, -2.4f, transform.position.z);
+        Vector3 currentPosition = transform.position;
+
+        // 높이가 -2.88 이하인 경우 0으로 설정
+        if (currentPosition.y < -2.88f)
+        {
+            currentPosition.y = -2.88f;
+            transform.position = currentPosition;
+        }
     }
 
     void Idle()
@@ -100,10 +109,13 @@ public class Enemy : MonoBehaviour
         {
             m_state = EnemyState.Move;
         }
+        
     }
 
     void Move()
     {
+        anim.SetBool("idleToWalk", false);
+
         if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z),
                              new Vector3(player.position.x, 0, player.position.z)) > attackdistsnce)
         {
@@ -111,39 +123,42 @@ public class Enemy : MonoBehaviour
                            new Vector3(transform.position.x, 0, transform.position.z)).normalized;
 
             cc.Move(dir * speed * Time.deltaTime);
+            anim.SetBool("idleToWalk", true);
         }
         else
         {
-            m_state = EnemyState.Attack1;
-            currentTime1 = attackdelay1;
+            if (currentTime1 <= 0)  // 수정된 부분
+            {
+                m_state = EnemyState.Attack1;
+                currentTime1 = attackdelay1;
+            }
+            else if (currentTime2 <= 0)  // 수정된 부분
+            {
+                m_state = EnemyState.Attack2;
+                currentTime2 = attackdelay2;
+            }
+            else if (currentTime3 <= 0)  // 수정된 부분
+            {
+                m_state = EnemyState.Attack3;
+                currentTime3 = attackdelay3;
+            }
+        }
+
+        // 각 공격 상태에서 currentTime 감소
+        if (m_state == EnemyState.Attack1)
+        {
+            currentTime1 -= Time.deltaTime;
+        }
+        else if (m_state == EnemyState.Attack2)
+        {
+            currentTime2 -= Time.deltaTime;
+        }
+        else if (m_state == EnemyState.Attack3)
+        {
+            currentTime3 -= Time.deltaTime;
         }
     }
 
-
-    //void Idle()
-    //{
-    //    if(Vector3.Distance(transform.position, player.position)<findDistance)
-    //    {
-    //        m_state = EnemyState.Move;
-
-    //    }
-    //}
-
-    //void move()
-    //{
-    //    if (Vector3.Distance(transform.position, player.position) > attackdistsnce)
-    //    {
-
-    //        Vector3 dir = (player.position - transform.position).normalized;
-
-    //        cc.Move(dir * speed * Time.deltaTime);
-    //    }
-    //    else
-    //    {
-    //        m_state = EnemyState.Attack1;   
-    //        currentTime1 = attackdelay1;
-    //    }
-    //}
 
     void attack1()
     {
@@ -154,7 +169,7 @@ public class Enemy : MonoBehaviour
             if (currentTime1 > attackdelay1)
             {
                 player.GetComponent<Player>().DamageAction(attackpower1);
-                
+                anim.SetBool("attack", true);
                 Debug.Log("에너미의 공격1");
                 currentTime1 = 0;
             }
@@ -177,6 +192,7 @@ public class Enemy : MonoBehaviour
                 player.GetComponent<Player>().DamageAction(attackpower2);
                 
                 Debug.Log("에너미의 공격2");
+                anim.SetBool("attack", true);
                 currentTime2 = 0;
             }
         }
@@ -195,7 +211,7 @@ public class Enemy : MonoBehaviour
             if (currentTime3 > attackdelay3)
             {
                 player.GetComponent<Player>().DamageAction(attackpower3);
-                
+                anim.SetBool("attack", true);
                 Debug.Log("에너미의 공격3");
                 currentTime3 = 0;
             }
