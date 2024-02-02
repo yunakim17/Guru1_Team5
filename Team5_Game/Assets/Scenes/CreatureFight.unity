@@ -2151,11 +2151,9 @@ MonoBehaviour:
   hpSlider: {fileID: 761751924}
   findDistance: 15
   attackdistsnce: 1.5
-  speed: 3
+  speed: 1
   anim: {fileID: 1002045810}
   attackpower1: 5
-  attackpower2: 8
-  attackpower3: 12
 --- !u!143 &841287654
 CharacterController:
   m_ObjectHideFlags: 0

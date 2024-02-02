@@ -15,9 +15,9 @@ public class Enemy : MonoBehaviour
 
     Transform player;
 
-    public float attackdistsnce = 1.5f;
+    public float attackdistsnce = 2f;
 
-    public float speed = 3f;
+    public float speed = 1f;
 
     CharacterController cc;
 
