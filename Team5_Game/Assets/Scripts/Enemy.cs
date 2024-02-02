@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int hp = 500;
+    public int hp = 400;
 
-    int maxHp = 500;
+    int maxHp = 400;
 
     public Slider hpSlider;
 
@@ -264,7 +264,7 @@ public class Enemy : MonoBehaviour
     {
         // 진행 중인 피격 코루틴을 중지한다.
         StopAllCoroutines();
-        cc.enabled = false;
+        Destroy(gameObject);
     }
 
     

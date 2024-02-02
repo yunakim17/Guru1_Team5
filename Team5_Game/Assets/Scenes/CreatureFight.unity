@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ee4d3bfde555a4a84b2511a8c1dbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 500
+  hp: 400
   hpSlider: {fileID: 761751924}
   findDistance: 15
   attackdistsnce: 1.5
@@ -2932,7 +2932,7 @@ MonoBehaviour:
   Magic4: {fileID: 5272890635048898380, guid: 20e91af98ec167846a1595c7d39e1174, type: 3}
   speed: 10
   pos: {fileID: 1359378643}
-  cooltime1: 3
+  cooltime1: 1
   curtime1: 0
   cooltime2: 5
   curtime2: 0
@@ -3412,8 +3412,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3448,7 +3448,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 73.950775, y: 9.742092, z: 74.4086, w: 0}
+  m_margin: {x: 73.950775, y: 9.742092, z: 74.4086, w: -904.68134}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3478,8 +3478,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -957.6, y: -531.9806}
-  m_SizeDelta: {x: 240.223, y: 49.5}
+  m_AnchoredPosition: {x: 45, y: 491}
+  m_SizeDelta: {x: 4000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1298020169
 GameObject:
@@ -3602,7 +3602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       propertyPath: m_text
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5346654624733729359, guid: 89cc7b48c0ac38846b93e398f62a7e89, type: 3}
       propertyPath: m_fontSize
@@ -3766,7 +3766,7 @@ MonoBehaviour:
   imageCooldown3: {fileID: 1321676712}
   textCooldown3: {fileID: 1321676711}
   isCooldown3: 1
-  cooldownTime3: 3
+  cooldownTime3: 1
 --- !u!1 &1359378642
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,7 +4145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 305, y: -455}
+  m_AnchoredPosition: {x: 306, y: -455}
   m_SizeDelta: {x: 130, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1693156780
@@ -4421,8 +4421,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -957.6, y: -532.13}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 46, y: 441}
+  m_SizeDelta: {x: 8500, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2096500681
 GameObject:
